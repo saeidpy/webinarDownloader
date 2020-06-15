@@ -65,11 +65,7 @@
       <Variable x:TypeArguments="x:Boolean" Default="False" Name="endBeEmptyData" />
       <Variable x:TypeArguments="x:String" Default="saeed2466" Name="mailPass" />
       <Variable x:TypeArguments="x:Int32" Name="mainSwitch" />
-      <Variable x:TypeArguments="x:String" Name="roboType">
-        <Variable.Default>
-          <Literal x:TypeArguments="x:String">saeed</Literal>
-        </Variable.Default>
-      </Variable>
+      <Variable x:TypeArguments="x:String" Default="saeed" Name="roboType" />
       <Variable x:TypeArguments="x:String" Default="[&quot;C:\Users\&quot;+roboType+&quot;\RobotSetting\&quot;]" Name="settingPath" />
       <Variable x:TypeArguments="x:String" Default="manuel.ohan@gmail.com" Name="receiverEmail" />
       <Variable x:TypeArguments="x:String" Name="url" />
@@ -95,15 +91,20 @@
       <sap:WorkflowViewStateService.ViewState>
         <scg:Dictionary x:TypeArguments="x:String, x:Object">
           <av:Point x:Key="ShapeLocation">200,147</av:Point>
-          <av:Size x:Key="ShapeSize">200,66</av:Size>
+          <av:Size x:Key="ShapeSize">200,68</av:Size>
           <av:PointCollection x:Key="ConnectorLocation">300,213 300,256.04</av:PointCollection>
         </scg:Dictionary>
       </sap:WorkflowViewStateService.ViewState>
-      <Sequence DisplayName="Inputs" sap:VirtualizedContainerService.HintSize="200,66" sap2010:WorkflowViewState.IdRef="Sequence_1">
+      <Sequence DisplayName="Inputs" sap:VirtualizedContainerService.HintSize="1849,5311" sap2010:WorkflowViewState.IdRef="Sequence_1">
         <Sequence.Variables>
           <Variable x:TypeArguments="x:Boolean" Name="authenExist" />
           <Variable x:TypeArguments="x:Boolean" Name="settingFolderExist" />
           <Variable x:TypeArguments="x:Boolean" Default="False" Name="urlContinue" />
+          <Variable x:TypeArguments="x:String" Name="resultServerSelection">
+            <Variable.Default>
+              <Literal x:TypeArguments="x:String">All</Literal>
+            </Variable.Default>
+          </Variable>
         </Sequence.Variables>
         <sap:WorkflowViewStateService.ViewState>
           <scg:Dictionary x:TypeArguments="x:String, x:Object">
@@ -111,22 +112,22 @@
             <x:Boolean x:Key="IsPinned">False</x:Boolean>
           </scg:Dictionary>
         </sap:WorkflowViewStateService.ViewState>
-        <ui:InterruptibleDoWhile DisplayName="Do While" sap:VirtualizedContainerService.HintSize="1693,4781" sap2010:WorkflowViewState.IdRef="InterruptibleDoWhile_3">
+        <ui:InterruptibleDoWhile DisplayName="Do While" sap:VirtualizedContainerService.HintSize="1807,4303" sap2010:WorkflowViewState.IdRef="InterruptibleDoWhile_3">
           <ui:InterruptibleDoWhile.Body>
-            <Sequence DisplayName="Body" sap:VirtualizedContainerService.HintSize="1657,4616" sap2010:WorkflowViewState.IdRef="Sequence_74">
+            <Sequence DisplayName="Body" sap:VirtualizedContainerService.HintSize="1771,4136" sap2010:WorkflowViewState.IdRef="Sequence_74">
               <sap:WorkflowViewStateService.ViewState>
                 <scg:Dictionary x:TypeArguments="x:String, x:Object">
                   <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                 </scg:Dictionary>
               </sap:WorkflowViewStateService.ViewState>
-              <ui:PathExists DisplayName="Path Exists" Exists="[settingFolderExist]" sap:VirtualizedContainerService.HintSize="1615,89" sap2010:WorkflowViewState.IdRef="PathExists_4" Path="[settingPath]" PathType="Folder" />
-              <If Condition="[settingFolderExist]" sap:VirtualizedContainerService.HintSize="1615,226" sap2010:WorkflowViewState.IdRef="If_8">
+              <ui:PathExists DisplayName="Path Exists" Exists="[settingFolderExist]" sap:VirtualizedContainerService.HintSize="1729,90" sap2010:WorkflowViewState.IdRef="PathExists_4" Path="[settingPath]" PathType="Folder" />
+              <If Condition="[settingFolderExist]" sap:VirtualizedContainerService.HintSize="1729,229" sap2010:WorkflowViewState.IdRef="If_8">
                 <If.Else>
-                  <ui:CreateDirectory ContinueOnError="False" DisplayName="Create Folder" sap:VirtualizedContainerService.HintSize="334,79" sap2010:WorkflowViewState.IdRef="CreateDirectory_3" Path="[settingPath]" />
+                  <ui:CreateDirectory ContinueOnError="False" DisplayName="Create Folder" sap:VirtualizedContainerService.HintSize="334,80" sap2010:WorkflowViewState.IdRef="CreateDirectory_3" Path="[settingPath]" />
                 </If.Else>
               </If>
-              <ui:PathExists DisplayName="Path Exists" Exists="[authenExist]" sap:VirtualizedContainerService.HintSize="1615,89" sap2010:WorkflowViewState.IdRef="PathExists_3" Path="[settingPath+&quot;authen.txt&quot;]" PathType="File" />
-              <If Condition="[authenExist]" sap:VirtualizedContainerService.HintSize="1615,3489" sap2010:WorkflowViewState.IdRef="If_5">
+              <ui:PathExists DisplayName="Path Exists" Exists="[authenExist]" sap:VirtualizedContainerService.HintSize="1729,90" sap2010:WorkflowViewState.IdRef="PathExists_3" Path="[settingPath+&quot;authen.txt&quot;]" PathType="File" />
+              <If Condition="[authenExist]" sap:VirtualizedContainerService.HintSize="1729,3515" sap2010:WorkflowViewState.IdRef="If_5">
                 <sap:WorkflowViewStateService.ViewState>
                   <scg:Dictionary x:TypeArguments="x:String, x:Object">
                     <x:Boolean x:Key="IsExpanded">True</x:Boolean>
@@ -134,7 +135,7 @@
                   </scg:Dictionary>
                 </sap:WorkflowViewStateService.ViewState>
                 <If.Then>
-                  <Sequence sap:VirtualizedContainerService.HintSize="695,1387" sap2010:WorkflowViewState.IdRef="Sequence_17">
+                  <Sequence sap:VirtualizedContainerService.HintSize="809,1561" sap2010:WorkflowViewState.IdRef="Sequence_17">
                     <Sequence.Variables>
                       <Variable x:TypeArguments="x:String" Name="authenData" />
                       <Variable x:TypeArguments="scg:List(x:String)" Name="authenDataList" />
@@ -148,8 +149,8 @@
                         <x:Boolean x:Key="IsPinned">False</x:Boolean>
                       </scg:Dictionary>
                     </sap:WorkflowViewStateService.ViewState>
-                    <ui:ReadTextFile Content="[authenData]" DisplayName="Read Text File" FileName="[settingPath+&quot;authen.txt&quot;]" sap:VirtualizedContainerService.HintSize="653,79" sap2010:WorkflowViewState.IdRef="ReadTextFile_2" />
-                    <Assign sap:VirtualizedContainerService.HintSize="653,60" sap2010:WorkflowViewState.IdRef="Assign_5">
+                    <ui:ReadTextFile Content="[authenData]" DisplayName="Read Text File" FileName="[settingPath+&quot;authen.txt&quot;]" sap:VirtualizedContainerService.HintSize="767,80" sap2010:WorkflowViewState.IdRef="ReadTextFile_2" />
+                    <Assign sap:VirtualizedContainerService.HintSize="767,60" sap2010:WorkflowViewState.IdRef="Assign_5">
                       <Assign.To>
                         <OutArgument x:TypeArguments="scg:List(x:String)">[authenDataList]</OutArgument>
                       </Assign.To>
@@ -157,7 +158,7 @@
                         <InArgument x:TypeArguments="scg:List(x:String)">[authenData.Split(Environment.NewLine.ToCharArray,StringSplitOptions.RemoveEmptyEntries).ToList]</InArgument>
                       </Assign.Value>
                     </Assign>
-                    <Assign DisplayName="Find Index" sap:VirtualizedContainerService.HintSize="653,60" sap2010:WorkflowViewState.IdRef="Assign_33">
+                    <Assign DisplayName="Find Index" sap:VirtualizedContainerService.HintSize="767,60" sap2010:WorkflowViewState.IdRef="Assign_33">
                       <Assign.To>
                         <OutArgument x:TypeArguments="x:Int32">[indexOfEndServers]</OutArgument>
                       </Assign.To>
@@ -165,7 +166,15 @@
                         <InArgument x:TypeArguments="x:Int32">[authenDataList.IndexOf("ENDOFSERVERS")]</InArgument>
                       </Assign.Value>
                     </Assign>
-                    <ui:CommentOut DisplayName="Comment Out" sap:VirtualizedContainerService.HintSize="653,51" sap2010:WorkflowViewState.IdRef="CommentOut_18">
+                    <Assign DisplayName="GetListOfServer" sap:VirtualizedContainerService.HintSize="767,60" sap2010:WorkflowViewState.IdRef="Assign_44">
+                      <Assign.To>
+                        <OutArgument x:TypeArguments="scg:List(x:String)">[listOfServers]</OutArgument>
+                      </Assign.To>
+                      <Assign.Value>
+                        <InArgument x:TypeArguments="scg:List(x:String)">[authenDataList.GetRange(0,indexOfEndServers)]</InArgument>
+                      </Assign.Value>
+                    </Assign>
+                    <ui:CommentOut DisplayName="Comment Out" sap:VirtualizedContainerService.HintSize="767,52" sap2010:WorkflowViewState.IdRef="CommentOut_18">
                       <ui:CommentOut.Body>
                         <Sequence DisplayName="Ignored Activities" sap:VirtualizedContainerService.HintSize="304,152" sap2010:WorkflowViewState.IdRef="Sequence_81">
                           <sap:WorkflowViewStateService.ViewState>
@@ -190,7 +199,7 @@
                         </scg:Dictionary>
                       </sap:WorkflowViewStateService.ViewState>
                     </ui:CommentOut>
-                    <Assign DisplayName="Username" sap:VirtualizedContainerService.HintSize="653,60" sap2010:WorkflowViewState.IdRef="Assign_26">
+                    <Assign DisplayName="Username" sap:VirtualizedContainerService.HintSize="767,60" sap2010:WorkflowViewState.IdRef="Assign_26">
                       <Assign.To>
                         <OutArgument x:TypeArguments="x:String">[username]</OutArgument>
                       </Assign.To>
@@ -198,7 +207,7 @@
                         <InArgument x:TypeArguments="x:String">[authenDataList(indexOfEndServers+1)]</InArgument>
                       </Assign.Value>
                     </Assign>
-                    <Assign DisplayName="Password" sap:VirtualizedContainerService.HintSize="653,60" sap2010:WorkflowViewState.IdRef="Assign_7">
+                    <Assign DisplayName="Password" sap:VirtualizedContainerService.HintSize="767,60" sap2010:WorkflowViewState.IdRef="Assign_7">
                       <Assign.To>
                         <OutArgument x:TypeArguments="x:String">[password]</OutArgument>
                       </Assign.To>
@@ -206,7 +215,7 @@
                         <InArgument x:TypeArguments="x:String">[authenDataList(indexOfEndServers+2)]</InArgument>
                       </Assign.Value>
                     </Assign>
-                    <Assign DisplayName="LinkFileSave" sap:VirtualizedContainerService.HintSize="653,60" sap2010:WorkflowViewState.IdRef="Assign_8">
+                    <Assign DisplayName="LinkFileSave" sap:VirtualizedContainerService.HintSize="767,60" sap2010:WorkflowViewState.IdRef="Assign_8">
                       <Assign.To>
                         <OutArgument x:TypeArguments="x:String">[linkSaveFiles]</OutArgument>
                       </Assign.To>
@@ -214,27 +223,39 @@
                         <InArgument x:TypeArguments="x:String">[authenDataList(indexOfEndServers+3)]</InArgument>
                       </Assign.Value>
                     </Assign>
-                    <Sequence sap:VirtualizedContainerService.HintSize="653,585" sap2010:WorkflowViewState.IdRef="Sequence_73">
+                    <Sequence sap:VirtualizedContainerService.HintSize="767,657" sap2010:WorkflowViewState.IdRef="Sequence_73">
                       <sap:WorkflowViewStateService.ViewState>
                         <scg:Dictionary x:TypeArguments="x:String, x:Object">
                           <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                         </scg:Dictionary>
                       </sap:WorkflowViewStateService.ViewState>
-                      <ui:InputDialog DisplayName="Input Dialog" sap:VirtualizedContainerService.HintSize="611,92" sap2010:WorkflowViewState.IdRef="InputDialog_5" IsPassword="False" Label="ایا می خواهید اطلاعات ورود را تغییر دهید" Options="[{&quot;بله&quot;,&quot;خیر&quot;}]" Title="دانلودر وبینار">
+                      <ui:InputDialog DisplayName="Input Dialog" sap:VirtualizedContainerService.HintSize="725,92" sap2010:WorkflowViewState.IdRef="InputDialog_5" IsPassword="False" Label="ایا می خواهید اطلاعات ورود را تغییر دهید" Options="[{&quot;بله&quot;,&quot;خیر&quot;}]" Title="دانلودر وبینار">
                         <ui:InputDialog.Result>
                           <OutArgument x:TypeArguments="x:String">[result]</OutArgument>
                         </ui:InputDialog.Result>
                       </ui:InputDialog>
-                      <If Condition="[result &lt;&gt; &quot;بله&quot;]" sap:VirtualizedContainerService.HintSize="611,361" sap2010:WorkflowViewState.IdRef="If_17">
+                      <If Condition="[result &lt;&gt; &quot;بله&quot;]" sap:VirtualizedContainerService.HintSize="725,433" sap2010:WorkflowViewState.IdRef="If_17">
                         <If.Then>
-                          <Assign sap:VirtualizedContainerService.HintSize="262,60" sap2010:WorkflowViewState.IdRef="Assign_30">
-                            <Assign.To>
-                              <OutArgument x:TypeArguments="x:Boolean">[urlContinue]</OutArgument>
-                            </Assign.To>
-                            <Assign.Value>
-                              <InArgument x:TypeArguments="x:Boolean">False</InArgument>
-                            </Assign.Value>
-                          </Assign>
+                          <Sequence sap:VirtualizedContainerService.HintSize="376,284" sap2010:WorkflowViewState.IdRef="Sequence_87">
+                            <sap:WorkflowViewStateService.ViewState>
+                              <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                              </scg:Dictionary>
+                            </sap:WorkflowViewStateService.ViewState>
+                            <ui:InputDialog DisplayName="Input Dialog" sap:VirtualizedContainerService.HintSize="334,92" sap2010:WorkflowViewState.IdRef="InputDialog_8" IsPassword="False" Label="سرور مورد نظر را انتخاب کنید" Options="[listOfServers.Append(&quot;All&quot;).ToArray]" Title="دانلودر وبینار">
+                              <ui:InputDialog.Result>
+                                <OutArgument x:TypeArguments="x:String">[resultServerSelection]</OutArgument>
+                              </ui:InputDialog.Result>
+                            </ui:InputDialog>
+                            <Assign sap:VirtualizedContainerService.HintSize="334,60" sap2010:WorkflowViewState.IdRef="Assign_30">
+                              <Assign.To>
+                                <OutArgument x:TypeArguments="x:Boolean">[urlContinue]</OutArgument>
+                              </Assign.To>
+                              <Assign.Value>
+                                <InArgument x:TypeArguments="x:Boolean">False</InArgument>
+                              </Assign.Value>
+                            </Assign>
+                          </Sequence>
                         </If.Then>
                         <If.Else>
                           <Sequence sap:VirtualizedContainerService.HintSize="304,214" sap2010:WorkflowViewState.IdRef="Sequence_72">
@@ -259,7 +280,7 @@
                   </Sequence>
                 </If.Then>
                 <If.Else>
-                  <Sequence sap:VirtualizedContainerService.HintSize="875,3342" sap2010:WorkflowViewState.IdRef="Sequence_18">
+                  <Sequence sap:VirtualizedContainerService.HintSize="875,3366" sap2010:WorkflowViewState.IdRef="Sequence_18">
                     <Sequence.Variables>
                       <Variable x:TypeArguments="x:Boolean" Name="existSaveFolder" />
                       <Variable x:TypeArguments="x:Boolean" Default="True" Name="saveFolderTure" />
@@ -280,9 +301,9 @@
                         <InArgument x:TypeArguments="x:Boolean">False</InArgument>
                       </Assign.Value>
                     </Assign>
-                    <ui:InterruptibleDoWhile DisplayName="Do While" sap:VirtualizedContainerService.HintSize="833,972" sap2010:WorkflowViewState.IdRef="InterruptibleDoWhile_4">
+                    <ui:InterruptibleDoWhile DisplayName="Do While" sap:VirtualizedContainerService.HintSize="833,980" sap2010:WorkflowViewState.IdRef="InterruptibleDoWhile_4">
                       <ui:InterruptibleDoWhile.Body>
-                        <Sequence DisplayName="Body" sap:VirtualizedContainerService.HintSize="526,807" sap2010:WorkflowViewState.IdRef="Sequence_78">
+                        <Sequence DisplayName="Body" sap:VirtualizedContainerService.HintSize="526,813" sap2010:WorkflowViewState.IdRef="Sequence_78">
                           <sap:WorkflowViewStateService.ViewState>
                             <scg:Dictionary x:TypeArguments="x:String, x:Object">
                               <x:Boolean x:Key="IsExpanded">True</x:Boolean>
@@ -293,15 +314,15 @@
                               <OutArgument x:TypeArguments="x:String">[servsers]</OutArgument>
                             </ui:InputDialog.Result>
                           </ui:InputDialog>
-                          <ui:AppendLine DisplayName="Append Line" FileName="[settingPath+&quot;authen.txt&quot;]" sap:VirtualizedContainerService.HintSize="484,132" sap2010:WorkflowViewState.IdRef="AppendLine_6" Text="[servsers]" />
-                          <ui:InputDialog DisplayName="Input Dialog" sap:VirtualizedContainerService.HintSize="484,92" sap2010:WorkflowViewState.IdRef="InputDialog_7" IsPassword="False" Label=" (با زدن next سرورو بعدی را وارد کنید و با زدن ok  تایید نهای را بدهید)" Options="[{&quot;OK&quot;,&quot;NEXT&quot;}]" Title="دانلودر وبینار">
+                          <ui:AppendLine DisplayName="Append Line" FileName="[settingPath+&quot;authen.txt&quot;]" sap:VirtualizedContainerService.HintSize="484,134" sap2010:WorkflowViewState.IdRef="AppendLine_6" Text="[servsers]" />
+                          <ui:InputDialog DisplayName="Input Dialog" sap:VirtualizedContainerService.HintSize="484,92" sap2010:WorkflowViewState.IdRef="InputDialog_7" IsPassword="False" Label="[&quot;برای اضافه کردن سرور بعد = NEXT&quot;+Environment.NewLine +&quot;و برای تایید = OK&quot;]" Options="[{&quot;OK&quot;,&quot;NEXT&quot;}]" Title="دانلودر وبینار">
                             <ui:InputDialog.Result>
                               <OutArgument x:TypeArguments="x:String">[serverResult]</OutArgument>
                             </ui:InputDialog.Result>
                           </ui:InputDialog>
-                          <If Condition="[serverResult = &quot;OK&quot;]" sap:VirtualizedContainerService.HintSize="484,279" sap2010:WorkflowViewState.IdRef="If_20">
+                          <If Condition="[serverResult = &quot;OK&quot;]" sap:VirtualizedContainerService.HintSize="484,283" sap2010:WorkflowViewState.IdRef="If_20">
                             <If.Then>
-                              <ui:AppendLine DisplayName="Append Line" FileName="[settingPath+&quot;authen.txt&quot;]" sap:VirtualizedContainerService.HintSize="334,132" sap2010:WorkflowViewState.IdRef="AppendLine_7" Text="ENDOFSERVERS" />
+                              <ui:AppendLine DisplayName="Append Line" FileName="[settingPath+&quot;authen.txt&quot;]" sap:VirtualizedContainerService.HintSize="334,134" sap2010:WorkflowViewState.IdRef="AppendLine_7" Text="ENDOFSERVERS" />
                             </If.Then>
                           </If>
                         </Sequence>
@@ -310,7 +331,7 @@
                         <mva:VisualBasicValue x:TypeArguments="x:Boolean" ExpressionText="serverResult = &quot;NEXT&quot;" sap2010:WorkflowViewState.IdRef="VisualBasicValue`1_1" />
                       </ui:InterruptibleDoWhile.Condition>
                     </ui:InterruptibleDoWhile>
-                    <ui:CommentOut DisplayName="Comment Out" sap:VirtualizedContainerService.HintSize="833,51" sap2010:WorkflowViewState.IdRef="CommentOut_17">
+                    <ui:CommentOut DisplayName="Comment Out" sap:VirtualizedContainerService.HintSize="833,52" sap2010:WorkflowViewState.IdRef="CommentOut_17">
                       <ui:CommentOut.Body>
                         <Sequence DisplayName="Ignored Activities" sap:VirtualizedContainerService.HintSize="376,184" sap2010:WorkflowViewState.IdRef="Sequence_79">
                           <sap:WorkflowViewStateService.ViewState>
@@ -342,15 +363,15 @@
                         <OutArgument x:TypeArguments="x:String">[password]</OutArgument>
                       </ui:InputDialog.Result>
                     </ui:InputDialog>
-                    <ui:InterruptibleDoWhile DisplayName="Do While" sap:VirtualizedContainerService.HintSize="833,1783" sap2010:WorkflowViewState.IdRef="InterruptibleDoWhile_2">
+                    <ui:InterruptibleDoWhile DisplayName="Do While" sap:VirtualizedContainerService.HintSize="833,1798" sap2010:WorkflowViewState.IdRef="InterruptibleDoWhile_2">
                       <ui:InterruptibleDoWhile.Body>
-                        <Sequence DisplayName="Body" sap:VirtualizedContainerService.HintSize="797,1618" sap2010:WorkflowViewState.IdRef="Sequence_65">
+                        <Sequence DisplayName="Body" sap:VirtualizedContainerService.HintSize="797,1631" sap2010:WorkflowViewState.IdRef="Sequence_65">
                           <sap:WorkflowViewStateService.ViewState>
                             <scg:Dictionary x:TypeArguments="x:String, x:Object">
                               <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                             </scg:Dictionary>
                           </sap:WorkflowViewStateService.ViewState>
-                          <ui:CommentOut DisplayName="Comment Out" sap:VirtualizedContainerService.HintSize="755,51" sap2010:WorkflowViewState.IdRef="CommentOut_13">
+                          <ui:CommentOut DisplayName="Comment Out" sap:VirtualizedContainerService.HintSize="755,52" sap2010:WorkflowViewState.IdRef="CommentOut_13">
                             <ui:CommentOut.Body>
                               <Sequence DisplayName="Ignored Activities" sap:VirtualizedContainerService.HintSize="376,184" sap2010:WorkflowViewState.IdRef="Sequence_69">
                                 <sap:WorkflowViewStateService.ViewState>
@@ -380,10 +401,10 @@
                               <InArgument x:TypeArguments="x:String">D:\</InArgument>
                             </Assign.Value>
                           </Assign>
-                          <ui:PathExists DisplayName="Path Exists" Exists="[existSaveFolder]" sap:VirtualizedContainerService.HintSize="755,89" sap2010:WorkflowViewState.IdRef="PathExists_8" Path="[linkSaveFiles]" PathType="Folder" />
-                          <If Condition="[existSaveFolder]" sap:VirtualizedContainerService.HintSize="755,1206" sap2010:WorkflowViewState.IdRef="If_16">
+                          <ui:PathExists DisplayName="Path Exists" Exists="[existSaveFolder]" sap:VirtualizedContainerService.HintSize="755,90" sap2010:WorkflowViewState.IdRef="PathExists_8" Path="[linkSaveFiles]" PathType="Folder" />
+                          <If Condition="[existSaveFolder]" sap:VirtualizedContainerService.HintSize="755,1217" sap2010:WorkflowViewState.IdRef="If_16">
                             <If.Then>
-                              <Sequence sap:VirtualizedContainerService.HintSize="376,1059" sap2010:WorkflowViewState.IdRef="Sequence_64">
+                              <Sequence sap:VirtualizedContainerService.HintSize="376,1068" sap2010:WorkflowViewState.IdRef="Sequence_64">
                                 <sap:WorkflowViewStateService.ViewState>
                                   <scg:Dictionary x:TypeArguments="x:String, x:Object">
                                     <x:Boolean x:Key="IsExpanded">True</x:Boolean>
@@ -397,11 +418,11 @@
                                     <InArgument x:TypeArguments="x:String">[linkSaveFiles.ToString+roboType.ToString+"\"]</InArgument>
                                   </Assign.Value>
                                 </Assign>
-                                <ui:CreateDirectory ContinueOnError="{x:Null}" DisplayName="Create Folder" sap:VirtualizedContainerService.HintSize="334,79" sap2010:WorkflowViewState.IdRef="CreateDirectory_5" Path="[linkSaveFiles]" />
-                                <ui:AppendLine DisplayName="Append Line" Encoding="UTF-8" FileName="[settingPath+&quot;authen.txt&quot;]" sap:VirtualizedContainerService.HintSize="334,132" sap2010:WorkflowViewState.IdRef="AppendLine_2" Text="[url]" />
-                                <ui:AppendLine DisplayName="Append Line" Encoding="UTF-8" FileName="[settingPath+&quot;authen.txt&quot;]" sap:VirtualizedContainerService.HintSize="334,132" sap2010:WorkflowViewState.IdRef="AppendLine_5" Text="[username]" />
-                                <ui:AppendLine DisplayName="Append Line" Encoding="UTF-8" FileName="[settingPath+&quot;authen.txt&quot;]" sap:VirtualizedContainerService.HintSize="334,132" sap2010:WorkflowViewState.IdRef="AppendLine_3" Text="[password]" />
-                                <ui:AppendLine DisplayName="Append Line" Encoding="UTF-8" FileName="[settingPath+&quot;authen.txt&quot;]" sap:VirtualizedContainerService.HintSize="334,132" sap2010:WorkflowViewState.IdRef="AppendLine_4" Text="[linkSaveFiles]" />
+                                <ui:CreateDirectory ContinueOnError="{x:Null}" DisplayName="Create Folder" sap:VirtualizedContainerService.HintSize="334,80" sap2010:WorkflowViewState.IdRef="CreateDirectory_5" Path="[linkSaveFiles]" />
+                                <ui:AppendLine DisplayName="Append Line" Encoding="UTF-8" FileName="[settingPath+&quot;authen.txt&quot;]" sap:VirtualizedContainerService.HintSize="334,134" sap2010:WorkflowViewState.IdRef="AppendLine_2" Text="[url]" />
+                                <ui:AppendLine DisplayName="Append Line" Encoding="UTF-8" FileName="[settingPath+&quot;authen.txt&quot;]" sap:VirtualizedContainerService.HintSize="334,134" sap2010:WorkflowViewState.IdRef="AppendLine_5" Text="[username]" />
+                                <ui:AppendLine DisplayName="Append Line" Encoding="UTF-8" FileName="[settingPath+&quot;authen.txt&quot;]" sap:VirtualizedContainerService.HintSize="334,134" sap2010:WorkflowViewState.IdRef="AppendLine_3" Text="[password]" />
+                                <ui:AppendLine DisplayName="Append Line" Encoding="UTF-8" FileName="[settingPath+&quot;authen.txt&quot;]" sap:VirtualizedContainerService.HintSize="334,134" sap2010:WorkflowViewState.IdRef="AppendLine_4" Text="[linkSaveFiles]" />
                                 <Assign sap:VirtualizedContainerService.HintSize="334,60" sap2010:WorkflowViewState.IdRef="Assign_28">
                                   <Assign.To>
                                     <OutArgument x:TypeArguments="x:Boolean">[saveFolderTure]</OutArgument>
@@ -425,60 +446,81 @@
                   </Sequence>
                 </If.Else>
               </If>
-              <Sequence sap:VirtualizedContainerService.HintSize="1615,471" sap2010:WorkflowViewState.IdRef="Sequence_82">
-                <Sequence.Variables>
-                  <Variable x:TypeArguments="x:String" Name="authenData" />
-                  <Variable x:TypeArguments="scg:List(x:String)" Name="authenDataList" />
-                  <Variable x:TypeArguments="x:Int32" Name="indexOfEndServers" />
-                </Sequence.Variables>
-                <sap:WorkflowViewStateService.ViewState>
-                  <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                    <x:Boolean x:Key="IsExpanded">True</x:Boolean>
-                  </scg:Dictionary>
-                </sap:WorkflowViewStateService.ViewState>
-                <ui:ReadTextFile Content="[authenData]" DisplayName="Read Text File" FileName="[settingPath+&quot;authen.txt&quot;]" sap:VirtualizedContainerService.HintSize="384,79" sap2010:WorkflowViewState.IdRef="ReadTextFile_3" />
-                <Assign sap:VirtualizedContainerService.HintSize="384,60" sap2010:WorkflowViewState.IdRef="Assign_35">
-                  <Assign.To>
-                    <OutArgument x:TypeArguments="scg:List(x:String)">[authenDataList]</OutArgument>
-                  </Assign.To>
-                  <Assign.Value>
-                    <InArgument x:TypeArguments="scg:List(x:String)">[authenData.Split(Environment.NewLine.ToCharArray,StringSplitOptions.RemoveEmptyEntries).ToList]</InArgument>
-                  </Assign.Value>
-                </Assign>
-                <Assign DisplayName="Find Index" sap:VirtualizedContainerService.HintSize="384,60" sap2010:WorkflowViewState.IdRef="Assign_36">
-                  <Assign.To>
-                    <OutArgument x:TypeArguments="x:Int32">[indexOfEndServers]</OutArgument>
-                  </Assign.To>
-                  <Assign.Value>
-                    <InArgument x:TypeArguments="x:Int32">[authenDataList.IndexOf("ENDOFSERVERS")]</InArgument>
-                  </Assign.Value>
-                </Assign>
-                <Assign DisplayName="GetListOfServer" sap:VirtualizedContainerService.HintSize="384,60" sap2010:WorkflowViewState.IdRef="Assign_37">
-                  <Assign.To>
-                    <OutArgument x:TypeArguments="scg:List(x:String)">[listOfServers]</OutArgument>
-                  </Assign.To>
-                  <Assign.Value>
-                    <InArgument x:TypeArguments="scg:List(x:String)">[authenDataList.GetRange(0,indexOfEndServers)]</InArgument>
-                  </Assign.Value>
-                </Assign>
-              </Sequence>
             </Sequence>
           </ui:InterruptibleDoWhile.Body>
           <ui:InterruptibleDoWhile.Condition>
             <mva:VisualBasicValue x:TypeArguments="x:Boolean" ExpressionText="urlContinue" sap2010:WorkflowViewState.IdRef="VisualBasicValue`1_2" />
           </ui:InterruptibleDoWhile.Condition>
         </ui:InterruptibleDoWhile>
+        <Sequence sap:VirtualizedContainerService.HintSize="1807,876" sap2010:WorkflowViewState.IdRef="Sequence_82">
+          <Sequence.Variables>
+            <Variable x:TypeArguments="x:String" Name="authenData" />
+            <Variable x:TypeArguments="scg:List(x:String)" Name="authenDataList" />
+            <Variable x:TypeArguments="x:Int32" Name="indexOfEndServers" />
+          </Sequence.Variables>
+          <sap:WorkflowViewStateService.ViewState>
+            <scg:Dictionary x:TypeArguments="x:String, x:Object">
+              <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+              <x:Boolean x:Key="IsPinned">False</x:Boolean>
+            </scg:Dictionary>
+          </sap:WorkflowViewStateService.ViewState>
+          <ui:ReadTextFile Content="[authenData]" DisplayName="Read Text File" FileName="[settingPath+&quot;authen.txt&quot;]" sap:VirtualizedContainerService.HintSize="484,80" sap2010:WorkflowViewState.IdRef="ReadTextFile_3" />
+          <Assign sap:VirtualizedContainerService.HintSize="484,60" sap2010:WorkflowViewState.IdRef="Assign_35">
+            <Assign.To>
+              <OutArgument x:TypeArguments="scg:List(x:String)">[authenDataList]</OutArgument>
+            </Assign.To>
+            <Assign.Value>
+              <InArgument x:TypeArguments="scg:List(x:String)">[authenData.Split(Environment.NewLine.ToCharArray,StringSplitOptions.RemoveEmptyEntries).ToList]</InArgument>
+            </Assign.Value>
+          </Assign>
+          <Assign DisplayName="Find Index" sap:VirtualizedContainerService.HintSize="484,60" sap2010:WorkflowViewState.IdRef="Assign_36">
+            <Assign.To>
+              <OutArgument x:TypeArguments="x:Int32">[indexOfEndServers]</OutArgument>
+            </Assign.To>
+            <Assign.Value>
+              <InArgument x:TypeArguments="x:Int32">[authenDataList.IndexOf("ENDOFSERVERS")]</InArgument>
+            </Assign.Value>
+          </Assign>
+          <Assign DisplayName="GetListOfServer" sap:VirtualizedContainerService.HintSize="484,60" sap2010:WorkflowViewState.IdRef="Assign_37">
+            <Assign.To>
+              <OutArgument x:TypeArguments="scg:List(x:String)">[listOfServers]</OutArgument>
+            </Assign.To>
+            <Assign.Value>
+              <InArgument x:TypeArguments="scg:List(x:String)">[authenDataList.GetRange(0,indexOfEndServers)]</InArgument>
+            </Assign.Value>
+          </Assign>
+          <If Condition="[resultServerSelection = &quot;All&quot;]" sap:VirtualizedContainerService.HintSize="484,364" sap2010:WorkflowViewState.IdRef="If_24">
+            <If.Else>
+              <Sequence sap:VirtualizedContainerService.HintSize="304,214" sap2010:WorkflowViewState.IdRef="Sequence_86">
+                <sap:WorkflowViewStateService.ViewState>
+                  <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                    <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                  </scg:Dictionary>
+                </sap:WorkflowViewStateService.ViewState>
+                <ClearCollection x:TypeArguments="x:String" Collection="[listOfServers]" DisplayName="Clear Collection" sap:VirtualizedContainerService.HintSize="262,22" sap2010:WorkflowViewState.IdRef="ClearCollection`1_1" />
+                <Assign sap:VirtualizedContainerService.HintSize="262,60" sap2010:WorkflowViewState.IdRef="Assign_45">
+                  <Assign.To>
+                    <OutArgument x:TypeArguments="scg:List(x:String)">[listOfServers]</OutArgument>
+                  </Assign.To>
+                  <Assign.Value>
+                    <InArgument x:TypeArguments="scg:List(x:String)">[listOfServers.Append(resultServerSelection).ToList]</InArgument>
+                  </Assign.Value>
+                </Assign>
+              </Sequence>
+            </If.Else>
+          </If>
+        </Sequence>
       </Sequence>
       <FlowStep.Next>
         <FlowStep x:Name="__ReferenceID1">
           <sap:WorkflowViewStateService.ViewState>
             <scg:Dictionary x:TypeArguments="x:String, x:Object">
               <av:Point x:Key="ShapeLocation">200,256.04</av:Point>
-              <av:Size x:Key="ShapeSize">200,66</av:Size>
+              <av:Size x:Key="ShapeSize">200,68</av:Size>
               <av:PointCollection x:Key="ConnectorLocation">300,322.04 300,376.04</av:PointCollection>
             </scg:Dictionary>
           </sap:WorkflowViewStateService.ViewState>
-          <Sequence DisplayName="ManageServers" sap:VirtualizedContainerService.HintSize="695,800" sap2010:WorkflowViewState.IdRef="Sequence_80">
+          <Sequence DisplayName="ManageServers" sap:VirtualizedContainerService.HintSize="200,68" sap2010:WorkflowViewState.IdRef="Sequence_80">
             <Sequence.Variables>
               <Variable x:TypeArguments="x:Int32" Name="countServers" />
             </Sequence.Variables>
@@ -564,11 +606,11 @@
               <sap:WorkflowViewStateService.ViewState>
                 <scg:Dictionary x:TypeArguments="x:String, x:Object">
                   <av:Point x:Key="ShapeLocation">200,376.04</av:Point>
-                  <av:Size x:Key="ShapeSize">200,66</av:Size>
+                  <av:Size x:Key="ShapeSize">200,68</av:Size>
                   <av:PointCollection x:Key="ConnectorLocation">300,442.04 300,472.04 299.8,472.04 299.8,496.4</av:PointCollection>
                 </scg:Dictionary>
               </sap:WorkflowViewStateService.ViewState>
-              <Sequence DisplayName="Open Browser for get meetin table" sap:VirtualizedContainerService.HintSize="200,66" sap2010:WorkflowViewState.IdRef="Sequence_6">
+              <Sequence DisplayName="Open Browser for get meetin table" sap:VirtualizedContainerService.HintSize="200,68" sap2010:WorkflowViewState.IdRef="Sequence_6">
                 <Sequence.Variables>
                   <Variable x:TypeArguments="x:Boolean" Default="False" Name="successLogin" />
                 </Sequence.Variables>
@@ -897,11 +939,11 @@
                     <sap:WorkflowViewStateService.ViewState>
                       <scg:Dictionary x:TypeArguments="x:String, x:Object">
                         <av:Point x:Key="ShapeLocation">10,505.6</av:Point>
-                        <av:Size x:Key="ShapeSize">200,66</av:Size>
+                        <av:Size x:Key="ShapeSize">200,68</av:Size>
                         <av:PointCollection x:Key="ConnectorLocation">110,571.6 110,591.65 234.8,591.65 234.8,561.65 264.8,561.65</av:PointCollection>
                       </scg:Dictionary>
                     </sap:WorkflowViewStateService.ViewState>
-                    <Sequence DisplayName="Video Recorder" sap:VirtualizedContainerService.HintSize="200,66" sap2010:WorkflowViewState.IdRef="Sequence_12">
+                    <Sequence DisplayName="Video Recorder" sap:VirtualizedContainerService.HintSize="200,68" sap2010:WorkflowViewState.IdRef="Sequence_12">
                       <Sequence.Variables>
                         <Variable x:TypeArguments="sd:DataTable" Name="recordingTable" />
                         <Variable x:TypeArguments="x:Boolean" Name="existWebinarDone" />
@@ -2025,10 +2067,10 @@
                     <sap:WorkflowViewStateService.ViewState>
                       <scg:Dictionary x:TypeArguments="x:String, x:Object">
                         <av:Point x:Key="ShapeLocation">410,507</av:Point>
-                        <av:Size x:Key="ShapeSize">200,66</av:Size>
+                        <av:Size x:Key="ShapeSize">200,68</av:Size>
                       </scg:Dictionary>
                     </sap:WorkflowViewStateService.ViewState>
-                    <Sequence DisplayName="End" sap:VirtualizedContainerService.HintSize="200,66" sap2010:WorkflowViewState.IdRef="Sequence_54">
+                    <Sequence DisplayName="End" sap:VirtualizedContainerService.HintSize="200,68" sap2010:WorkflowViewState.IdRef="Sequence_54">
                       <sap:WorkflowViewStateService.ViewState>
                         <scg:Dictionary x:TypeArguments="x:String, x:Object">
                           <x:Boolean x:Key="IsExpanded">True</x:Boolean>
