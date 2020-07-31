@@ -1729,9 +1729,9 @@
     "restore": {
       "projectUniqueName": "webinarDownloader",
       "projectName": "webinarDownloader",
-      "projectPath": "C:\\Users\\saeed\\Desktop\\webinarDownloader\\.local",
+      "projectPath": "C:\\Users\\saeed\\Desktop\\newUpdateWebinar\\webinarDownloader\\.local",
       "packagesPath": "C:\\Users\\saeed\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\saeed\\Desktop\\webinarDownloader\\.local"
+      "outputPath": "C:\\Users\\saeed\\Desktop\\newUpdateWebinar\\webinarDownloader\\.local"
     },
     "frameworks": {
       "net461": {
