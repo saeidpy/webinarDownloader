@@ -113,6 +113,21 @@
         "C:\\Users\\saeid\\.nuget\\packages\\uipath.vision/2.0.3\\lib/net461/UiPath.Vision.dll"
       ],
       "Path": "C:\\Users\\saeid\\.nuget\\packages\\uipath.uiautomation.activities\\20.4.1"
+    },
+    {
+      "Package": {
+        "Id": "UiPath.WebAPI.Activities",
+        "Version": "1.4.5"
+      },
+      "Assemblies": [
+        "C:\\Users\\saeid\\.nuget\\packages\\avalonedit/5.0.3\\lib/Net40/ICSharpCode.AvalonEdit.dll",
+        "C:\\Users\\saeid\\.nuget\\packages\\newtonsoft.json/12.0.3\\lib/net45/Newtonsoft.Json.dll",
+        "C:\\Users\\saeid\\.nuget\\packages\\restsharp/106.3.1\\lib/net452/RestSharp.dll",
+        "C:\\Users\\saeid\\.nuget\\packages\\uipath.webapi.activities/1.4.5\\lib/net452/UiPath.Web.Activities.Design.dll",
+        "C:\\Users\\saeid\\.nuget\\packages\\uipath.webapi.activities/1.4.5\\lib/net452/UiPath.Web.Activities.dll",
+        "C:\\Users\\saeid\\.nuget\\packages\\uipath.webapi.activities/1.4.5\\lib/net452/UiPath.Web.dll"
+      ],
+      "Path": "C:\\Users\\saeid\\.nuget\\packages\\uipath.webapi.activities\\1.4.5"
     }
   ],
   "Conflicts": [],
@@ -206,6 +221,11 @@
           "Item2": "[1.0.0, )"
         }
       ]
+    },
+    "RestSharp": {
+      "Id": "RestSharp",
+      "Version": "106.3.1",
+      "Dependencies": []
     },
     "SharpZipLib": {
       "Id": "SharpZipLib",
@@ -402,6 +422,24 @@
           "Item2": "[2.6.0, )"
         }
       ]
+    },
+    "UiPath.WebAPI.Activities": {
+      "Id": "UiPath.WebAPI.Activities",
+      "Version": "1.4.5",
+      "Dependencies": [
+        {
+          "Item1": "AvalonEdit",
+          "Item2": "[5.0.3, )"
+        },
+        {
+          "Item1": "Newtonsoft.Json",
+          "Item2": "[11.0.2, )"
+        },
+        {
+          "Item1": "RestSharp",
+          "Item2": "[106.3.1, )"
+        }
+      ]
     }
   },
   "AllPackages": [
@@ -553,6 +591,16 @@
         "C:\\Users\\saeid\\.nuget\\packages\\npoi\\2.4.1\\lib\\net45\\NPOI.dll"
       ],
       "Path": "C:\\Users\\saeid\\.nuget\\packages\\npoi\\2.4.1"
+    },
+    {
+      "Package": {
+        "Id": "RestSharp",
+        "Version": "106.3.1"
+      },
+      "Assemblies": [
+        "C:\\Users\\saeid\\.nuget\\packages\\restsharp\\106.3.1\\lib\\net452\\RestSharp.dll"
+      ],
+      "Path": "C:\\Users\\saeid\\.nuget\\packages\\restsharp\\106.3.1"
     },
     {
       "Package": {
@@ -718,6 +766,18 @@
         "C:\\Users\\saeid\\.nuget\\packages\\uipath.vision\\2.0.3\\lib\\net461\\UiPath.Vision.dll"
       ],
       "Path": "C:\\Users\\saeid\\.nuget\\packages\\uipath.vision\\2.0.3"
+    },
+    {
+      "Package": {
+        "Id": "UiPath.WebAPI.Activities",
+        "Version": "1.4.5"
+      },
+      "Assemblies": [
+        "C:\\Users\\saeid\\.nuget\\packages\\uipath.webapi.activities\\1.4.5\\lib\\net452\\UiPath.Web.Activities.Design.dll",
+        "C:\\Users\\saeid\\.nuget\\packages\\uipath.webapi.activities\\1.4.5\\lib\\net452\\UiPath.Web.Activities.dll",
+        "C:\\Users\\saeid\\.nuget\\packages\\uipath.webapi.activities\\1.4.5\\lib\\net452\\UiPath.Web.dll"
+      ],
+      "Path": "C:\\Users\\saeid\\.nuget\\packages\\uipath.webapi.activities\\1.4.5"
     }
   ]
 }
