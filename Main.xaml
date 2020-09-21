@@ -74,7 +74,11 @@
       <Variable x:TypeArguments="x:Boolean" Default="False" Name="endBeEmptyData" />
       <Variable x:TypeArguments="x:String" Default="5FE5AF7164B9DD98D5D3182F44937CDE2B47" Name="mailPass" />
       <Variable x:TypeArguments="x:Int32" Name="mainSwitch" />
-      <Variable x:TypeArguments="x:String" Default="saeid" Name="roboType" />
+      <Variable x:TypeArguments="x:String" Name="roboType">
+        <Variable.Default>
+          <Literal x:TypeArguments="x:String">bot1</Literal>
+        </Variable.Default>
+      </Variable>
       <Variable x:TypeArguments="x:String" Default="[&quot;C:\Users\&quot;+roboType+&quot;\RobotSetting\&quot;]" Name="settingPath" />
       <Variable x:TypeArguments="x:String" Default="shahriyar.hosseinzadeh@gmail.com" Name="receiverEmail" />
       <Variable x:TypeArguments="x:String" Name="url" />
