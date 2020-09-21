@@ -2624,7 +2624,7 @@
             <av:PointCollection x:Key="ConnectorLocation">910,532 910,636.5</av:PointCollection>
           </scg:Dictionary>
         </sap:WorkflowViewStateService.ViewState>
-        <Sequence DisplayName="Video Recorder" sap:VirtualizedContainerService.HintSize="1434,12151" sap2010:WorkflowViewState.IdRef="Sequence_166">
+        <Sequence DisplayName="Video Recorder" sap:VirtualizedContainerService.HintSize="1434,12408" sap2010:WorkflowViewState.IdRef="Sequence_166">
           <Sequence.Variables>
             <Variable x:TypeArguments="sd:DataTable" Name="recordingTable" />
             <Variable x:TypeArguments="x:Boolean" Name="existWebinarDone" />
@@ -2638,13 +2638,13 @@
               <x:Boolean x:Key="IsExpanded">True</x:Boolean>
             </scg:Dictionary>
           </sap:WorkflowViewStateService.ViewState>
-          <ui:ForEach x:TypeArguments="x:Object" CurrentIndex="{x:Null}" DisplayName="For Each" sap:VirtualizedContainerService.HintSize="1392,11959" sap2010:WorkflowViewState.IdRef="ForEach`1_6" Values="[newLinks]">
+          <ui:ForEach x:TypeArguments="x:Object" CurrentIndex="{x:Null}" DisplayName="For Each" sap:VirtualizedContainerService.HintSize="1392,12216" sap2010:WorkflowViewState.IdRef="ForEach`1_6" Values="[newLinks]">
             <ui:ForEach.Body>
               <ActivityAction x:TypeArguments="x:Object">
                 <ActivityAction.Argument>
                   <DelegateInArgument x:TypeArguments="x:Object" Name="item" />
                 </ActivityAction.Argument>
-                <Sequence sap:VirtualizedContainerService.HintSize="1356,11825" sap2010:WorkflowViewState.IdRef="Sequence_198">
+                <Sequence sap:VirtualizedContainerService.HintSize="1356,12082" sap2010:WorkflowViewState.IdRef="Sequence_198">
                   <Sequence.Variables>
                     <Variable x:TypeArguments="x:Boolean" Name="exeption" />
                     <Variable x:TypeArguments="x:String" Name="scoID" />
@@ -2686,7 +2686,7 @@
                     </ui:CloseApplication.Target>
                   </ui:CloseApplication>
                   <Delay Duration="00:00:04" sap:VirtualizedContainerService.HintSize="1314,22" sap2010:WorkflowViewState.IdRef="Delay_7" />
-                  <TryCatch DisplayName="Try Catch" sap:VirtualizedContainerService.HintSize="1314,11063" sap2010:WorkflowViewState.IdRef="TryCatch_13">
+                  <TryCatch DisplayName="Try Catch" sap:VirtualizedContainerService.HintSize="1314,11320" sap2010:WorkflowViewState.IdRef="TryCatch_13">
                     <sap:WorkflowViewStateService.ViewState>
                       <scg:Dictionary x:TypeArguments="x:String, x:Object">
                         <x:Boolean x:Key="IsExpanded">True</x:Boolean>
@@ -2694,7 +2694,7 @@
                       </scg:Dictionary>
                     </sap:WorkflowViewStateService.ViewState>
                     <TryCatch.Try>
-                      <Sequence sap:VirtualizedContainerService.HintSize="1276,10835" sap2010:WorkflowViewState.IdRef="Sequence_197">
+                      <Sequence sap:VirtualizedContainerService.HintSize="1276,11092" sap2010:WorkflowViewState.IdRef="Sequence_197">
                         <Sequence.Variables>
                           <Variable x:TypeArguments="x:String" Name="urlWebirnarManual" />
                           <Variable x:TypeArguments="x:Boolean" Name="emptyDataTableManual" />
@@ -2907,9 +2907,9 @@
                             </scg:Dictionary>
                           </sap:WorkflowViewStateService.ViewState>
                         </ui:ForEachRow>
-                        <If Condition="[emptyDataTableManual]" sap:VirtualizedContainerService.HintSize="1234,9119" sap2010:WorkflowViewState.IdRef="If_49">
+                        <If Condition="[emptyDataTableManual]" sap:VirtualizedContainerService.HintSize="1234,9376" sap2010:WorkflowViewState.IdRef="If_49">
                           <If.Else>
-                            <Sequence sap:VirtualizedContainerService.HintSize="1089,8971" sap2010:WorkflowViewState.IdRef="Sequence_153">
+                            <Sequence sap:VirtualizedContainerService.HintSize="1089,9228" sap2010:WorkflowViewState.IdRef="Sequence_153">
                               <Sequence.Variables>
                                 <Variable x:TypeArguments="x:Boolean" Name="existWebinarlogManual" />
                               </Sequence.Variables>
@@ -2938,13 +2938,13 @@
                                 </ui:FilterDataTable.SelectColumns>
                               </ui:FilterDataTable>
                               <ui:PathExists DisplayName="Path Exists" Exists="[existWebinarlogManual]" sap:VirtualizedContainerService.HintSize="1047,89" sap2010:WorkflowViewState.IdRef="PathExists_15" Path="[settingLogPath+url]" PathType="File" />
-                              <ui:ForEachRow CurrentIndex="{x:Null}" DataTable="[recordingTable]" DisplayName="For Each Row" sap:VirtualizedContainerService.HintSize="1047,8589" sap2010:WorkflowViewState.IdRef="ForEachRow_5">
+                              <ui:ForEachRow CurrentIndex="{x:Null}" DataTable="[recordingTable]" DisplayName="For Each Row" sap:VirtualizedContainerService.HintSize="1047,8846" sap2010:WorkflowViewState.IdRef="ForEachRow_5">
                                 <ui:ForEachRow.Body>
                                   <ActivityAction x:TypeArguments="sd:DataRow">
                                     <ActivityAction.Argument>
                                       <DelegateInArgument x:TypeArguments="sd:DataRow" Name="row" />
                                     </ActivityAction.Argument>
-                                    <TryCatch DisplayName="Try Catch" sap:VirtualizedContainerService.HintSize="997,8441" sap2010:WorkflowViewState.IdRef="TryCatch_12">
+                                    <TryCatch DisplayName="Try Catch" sap:VirtualizedContainerService.HintSize="997,8698" sap2010:WorkflowViewState.IdRef="TryCatch_12">
                                       <TryCatch.Variables>
                                         <Variable x:TypeArguments="x:String" Name="nameRecord" />
                                       </TryCatch.Variables>
@@ -2955,7 +2955,7 @@
                                         </scg:Dictionary>
                                       </sap:WorkflowViewStateService.ViewState>
                                       <TryCatch.Try>
-                                        <Sequence sap:VirtualizedContainerService.HintSize="959,8214" sap2010:WorkflowViewState.IdRef="Sequence_191">
+                                        <Sequence sap:VirtualizedContainerService.HintSize="959,8471" sap2010:WorkflowViewState.IdRef="Sequence_191">
                                           <Sequence.Variables>
                                             <Variable x:TypeArguments="x:Boolean" Name="emptyDataTable" />
                                           </Sequence.Variables>
@@ -2965,14 +2965,14 @@
                                               <x:Boolean x:Key="IsPinned">False</x:Boolean>
                                             </scg:Dictionary>
                                           </sap:WorkflowViewStateService.ViewState>
-                                          <Sequence DisplayName="Body" sap:VirtualizedContainerService.HintSize="917,8122" sap2010:WorkflowViewState.IdRef="Sequence_190">
+                                          <Sequence DisplayName="Body" sap:VirtualizedContainerService.HintSize="917,8379" sap2010:WorkflowViewState.IdRef="Sequence_190">
                                             <sap:WorkflowViewStateService.ViewState>
                                               <scg:Dictionary x:TypeArguments="x:String, x:Object">
                                                 <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                                                 <x:Boolean x:Key="IsPinned">False</x:Boolean>
                                               </scg:Dictionary>
                                             </sap:WorkflowViewStateService.ViewState>
-                                            <Sequence DisplayName="Body" sap:VirtualizedContainerService.HintSize="875,8030" sap2010:WorkflowViewState.IdRef="Sequence_189">
+                                            <Sequence DisplayName="Body" sap:VirtualizedContainerService.HintSize="875,8287" sap2010:WorkflowViewState.IdRef="Sequence_189">
                                               <Sequence.Variables>
                                                 <Variable x:TypeArguments="x:String" Name="urlWebirnar" />
                                                 <Variable x:TypeArguments="x:Boolean" Name="existDoneFolder" />
@@ -2985,7 +2985,7 @@
                                                   <x:Boolean x:Key="IsPinned">False</x:Boolean>
                                                 </scg:Dictionary>
                                               </sap:WorkflowViewStateService.ViewState>
-                                              <Sequence DisplayName="Main Roe Each Row" sap:VirtualizedContainerService.HintSize="833,7039" sap2010:WorkflowViewState.IdRef="Sequence_186">
+                                              <Sequence DisplayName="Main Roe Each Row" sap:VirtualizedContainerService.HintSize="833,7296" sap2010:WorkflowViewState.IdRef="Sequence_186">
                                                 <Sequence.Variables>
                                                   <Variable x:TypeArguments="x:Boolean" Name="existWebinarlog" />
                                                   <Variable x:TypeArguments="x:String" Name="nameWebinarDir" />
@@ -2997,7 +2997,7 @@
                                                     <x:Boolean x:Key="IsPinned">False</x:Boolean>
                                                   </scg:Dictionary>
                                                 </sap:WorkflowViewStateService.ViewState>
-                                                <Sequence DisplayName="Body" sap:VirtualizedContainerService.HintSize="788,6947" sap2010:WorkflowViewState.IdRef="Sequence_185">
+                                                <Sequence DisplayName="Body" sap:VirtualizedContainerService.HintSize="789,7204" sap2010:WorkflowViewState.IdRef="Sequence_185">
                                                   <Sequence.Variables>
                                                     <Variable x:TypeArguments="x:String" Name="timer" />
                                                     <Variable x:TypeArguments="x:Boolean" Name="endAlertExist" />
@@ -3014,7 +3014,7 @@
                                                       <x:Boolean x:Key="IsPinned">False</x:Boolean>
                                                     </scg:Dictionary>
                                                   </sap:WorkflowViewStateService.ViewState>
-                                                  <ui:CommentOut DisplayName="Comment Out" sap:VirtualizedContainerService.HintSize="746,51" sap2010:WorkflowViewState.IdRef="CommentOut_45">
+                                                  <ui:CommentOut DisplayName="Comment Out" sap:VirtualizedContainerService.HintSize="747,51" sap2010:WorkflowViewState.IdRef="CommentOut_45">
                                                     <ui:CommentOut.Body>
                                                       <Sequence DisplayName="Ignored Activities" sap:VirtualizedContainerService.HintSize="672,406" sap2010:WorkflowViewState.IdRef="Sequence_227">
                                                         <sap:WorkflowViewStateService.ViewState>
@@ -3114,7 +3114,7 @@
                                                       </scg:Dictionary>
                                                     </sap:WorkflowViewStateService.ViewState>
                                                   </ui:CommentOut>
-                                                  <Assign sap:VirtualizedContainerService.HintSize="746,60" sap2010:WorkflowViewState.IdRef="Assign_143">
+                                                  <Assign sap:VirtualizedContainerService.HintSize="747,60" sap2010:WorkflowViewState.IdRef="Assign_143">
                                                     <Assign.To>
                                                       <OutArgument x:TypeArguments="x:Boolean">[exeption]</OutArgument>
                                                     </Assign.To>
@@ -3122,7 +3122,7 @@
                                                       <InArgument x:TypeArguments="x:Boolean">False</InArgument>
                                                     </Assign.Value>
                                                   </Assign>
-                                                  <If Condition="[row.Item(1).ToString.Contains(&quot;This recording is being processed&quot;)]" sap:VirtualizedContainerService.HintSize="746,208" sap2010:WorkflowViewState.IdRef="If_74">
+                                                  <If Condition="[row.Item(1).ToString.Contains(&quot;This recording is being processed&quot;)]" sap:VirtualizedContainerService.HintSize="747,208" sap2010:WorkflowViewState.IdRef="If_74">
                                                     <If.Then>
                                                       <Assign sap:VirtualizedContainerService.HintSize="262,60" sap2010:WorkflowViewState.IdRef="Assign_145">
                                                         <Assign.To>
@@ -3144,7 +3144,7 @@
                                                       </Assign>
                                                     </If.Else>
                                                   </If>
-                                                  <Assign sap:VirtualizedContainerService.HintSize="746,60" sap2010:WorkflowViewState.IdRef="Assign_148">
+                                                  <Assign sap:VirtualizedContainerService.HintSize="747,60" sap2010:WorkflowViewState.IdRef="Assign_148">
                                                     <Assign.To>
                                                       <OutArgument x:TypeArguments="x:String">[nameVideo]</OutArgument>
                                                     </Assign.To>
@@ -3152,7 +3152,7 @@
                                                       <InArgument x:TypeArguments="x:String">[nameRecord]</InArgument>
                                                     </Assign.Value>
                                                   </Assign>
-                                                  <Assign DisplayName="Webinar name" sap:VirtualizedContainerService.HintSize="746,60" sap2010:WorkflowViewState.IdRef="Assign_88">
+                                                  <Assign DisplayName="Webinar name" sap:VirtualizedContainerService.HintSize="747,60" sap2010:WorkflowViewState.IdRef="Assign_88">
                                                     <Assign.To>
                                                       <OutArgument x:TypeArguments="x:String">[nameWebinarDir]</OutArgument>
                                                     </Assign.To>
@@ -3160,7 +3160,7 @@
                                                       <InArgument x:TypeArguments="x:String">[nameRecord.Split("-"C)(0)]</InArgument>
                                                     </Assign.Value>
                                                   </Assign>
-                                                  <Assign DisplayName="Webinar name" sap:VirtualizedContainerService.HintSize="746,60" sap2010:WorkflowViewState.IdRef="Assign_87">
+                                                  <Assign DisplayName="Webinar name" sap:VirtualizedContainerService.HintSize="747,60" sap2010:WorkflowViewState.IdRef="Assign_87">
                                                     <Assign.To>
                                                       <OutArgument x:TypeArguments="x:String">[nameWebinar]</OutArgument>
                                                     </Assign.To>
@@ -3168,29 +3168,23 @@
                                                       <InArgument x:TypeArguments="x:String">[nameRecord.Split("-"C)(0)]</InArgument>
                                                     </Assign.Value>
                                                   </Assign>
-                                                  <TryCatch DisplayName="Try Catch" sap:VirtualizedContainerService.HintSize="746,361" sap2010:WorkflowViewState.IdRef="TryCatch_14">
+                                                  <Delay Duration="00:00:04" sap:VirtualizedContainerService.HintSize="747,22" sap2010:WorkflowViewState.IdRef="Delay_8" />
+                                                  <TryCatch DisplayName="Try Catch" sap:VirtualizedContainerService.HintSize="747,557" sap2010:WorkflowViewState.IdRef="TryCatch_14">
                                                     <TryCatch.Try>
                                                       <ui:GetAttribute ContinueOnError="{x:Null}" Attribute="href" DisplayName="get url video room" sap:VirtualizedContainerService.HintSize="334,134" sap2010:WorkflowViewState.IdRef="GetAttribute_5">
                                                         <ui:GetAttribute.Result>
                                                           <OutArgument x:TypeArguments="x:String">[urlRoomVideos]</OutArgument>
                                                         </ui:GetAttribute.Result>
                                                         <ui:GetAttribute.Target>
-                                                          <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="901329a8-d48d-4cb4-b220-7518e314b004" InformativeScreenshot="46a97e949ca055b65e823ec2b4da5ed6" Selector="[&quot;&lt;html app='chrome.exe' title='Recordings' /&gt;&lt;webctrl aaname='*&quot;+nameVideo+&quot;*' parentclass='recording-link-text' /&gt;&quot;]">
-                                                            <ui:Target.TimeoutMS>
-                                                              <InArgument x:TypeArguments="x:Int32" />
-                                                            </ui:Target.TimeoutMS>
-                                                            <ui:Target.WaitForReady>
-                                                              <InArgument x:TypeArguments="ui:WaitForReady" />
-                                                            </ui:Target.WaitForReady>
-                                                          </ui:Target>
+                                                          <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="901329a8-d48d-4cb4-b220-7518e314b004" InformativeScreenshot="46a97e949ca055b65e823ec2b4da5ed6" Selector="[&quot;&lt;html app='chrome.exe' title='Recordings' /&gt;&lt;webctrl aaname='*&quot;+nameVideo+&quot;*' parentclass='recording-link-text' /&gt;&quot;]" TimeoutMS="6000" WaitForReady="COMPLETE" />
                                                         </ui:GetAttribute.Target>
                                                       </ui:GetAttribute>
                                                     </TryCatch.Try>
                                                     <TryCatch.Catches>
-                                                      <Catch x:TypeArguments="s:Exception" sap:VirtualizedContainerService.HintSize="404,21" sap2010:WorkflowViewState.IdRef="Catch`1_14">
+                                                      <Catch x:TypeArguments="s:Exception" sap:VirtualizedContainerService.HintSize="400,395" sap2010:WorkflowViewState.IdRef="Catch`1_14">
                                                         <sap:WorkflowViewStateService.ViewState>
                                                           <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                                                            <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                                                            <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                                                             <x:Boolean x:Key="IsPinned">False</x:Boolean>
                                                           </scg:Dictionary>
                                                         </sap:WorkflowViewStateService.ViewState>
@@ -3198,7 +3192,7 @@
                                                           <ActivityAction.Argument>
                                                             <DelegateInArgument x:TypeArguments="s:Exception" Name="exception" />
                                                           </ActivityAction.Argument>
-                                                          <Sequence sap:VirtualizedContainerService.HintSize="376,324" sap2010:WorkflowViewState.IdRef="Sequence_229">
+                                                          <Sequence sap:VirtualizedContainerService.HintSize="376,326" sap2010:WorkflowViewState.IdRef="Sequence_229">
                                                             <sap:WorkflowViewStateService.ViewState>
                                                               <scg:Dictionary x:TypeArguments="x:String, x:Object">
                                                                 <x:Boolean x:Key="IsExpanded">True</x:Boolean>
@@ -3212,19 +3206,12 @@
                                                                 <InArgument x:TypeArguments="x:String" xml:space="preserve">[nameRecord.Replace("  ","*")]</InArgument>
                                                               </Assign.Value>
                                                             </Assign>
-                                                            <ui:GetAttribute ContinueOnError="{x:Null}" Attribute="href" DisplayName="get url video room" sap:VirtualizedContainerService.HintSize="333.6,135.2" sap2010:WorkflowViewState.IdRef="GetAttribute_7">
+                                                            <ui:GetAttribute ContinueOnError="{x:Null}" Attribute="href" DisplayName="get url video room" sap:VirtualizedContainerService.HintSize="334,134" sap2010:WorkflowViewState.IdRef="GetAttribute_7">
                                                               <ui:GetAttribute.Result>
                                                                 <OutArgument x:TypeArguments="x:String">[urlRoomVideos]</OutArgument>
                                                               </ui:GetAttribute.Result>
                                                               <ui:GetAttribute.Target>
-                                                                <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="901329a8-d48d-4cb4-b220-7518e314b004" InformativeScreenshot="46a97e949ca055b65e823ec2b4da5ed6" Selector="[&quot;&lt;html app='chrome.exe' title='Recordings' /&gt;&lt;webctrl aaname='*&quot;+nameVideo+&quot;*' parentclass='recording-link-text' /&gt;&quot;]">
-                                                                  <ui:Target.TimeoutMS>
-                                                                    <InArgument x:TypeArguments="x:Int32" />
-                                                                  </ui:Target.TimeoutMS>
-                                                                  <ui:Target.WaitForReady>
-                                                                    <InArgument x:TypeArguments="ui:WaitForReady" />
-                                                                  </ui:Target.WaitForReady>
-                                                                </ui:Target>
+                                                                <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="901329a8-d48d-4cb4-b220-7518e314b004" InformativeScreenshot="46a97e949ca055b65e823ec2b4da5ed6" Selector="[&quot;&lt;html app='chrome.exe' title='Recordings' /&gt;&lt;webctrl aaname='*&quot;+nameVideo+&quot;*' parentclass='recording-link-text' /&gt;&quot;]" TimeoutMS="6000" WaitForReady="COMPLETE" />
                                                               </ui:GetAttribute.Target>
                                                             </ui:GetAttribute>
                                                           </Sequence>
@@ -3232,7 +3219,7 @@
                                                       </Catch>
                                                     </TryCatch.Catches>
                                                   </TryCatch>
-                                                  <Assign DisplayName="generat sco ID" sap:VirtualizedContainerService.HintSize="745.6,60" sap2010:WorkflowViewState.IdRef="Assign_112">
+                                                  <Assign DisplayName="generat sco ID" sap:VirtualizedContainerService.HintSize="747,60" sap2010:WorkflowViewState.IdRef="Assign_112">
                                                     <Assign.To>
                                                       <OutArgument x:TypeArguments="x:String">[scoID]</OutArgument>
                                                     </Assign.To>
@@ -3240,7 +3227,7 @@
                                                       <InArgument x:TypeArguments="x:String">[urlRoomVideos.Split("&amp;"c)(3).ToString.Split("="c)(1).ToString]</InArgument>
                                                     </Assign.Value>
                                                   </Assign>
-                                                  <If Condition="[existWebinarlogManual]" DisplayName="If Webinar Exist" sap:VirtualizedContainerService.HintSize="745.6,1055.2" sap2010:WorkflowViewState.IdRef="If_57">
+                                                  <If Condition="[existWebinarlogManual]" DisplayName="If Webinar Exist" sap:VirtualizedContainerService.HintSize="747,1054" sap2010:WorkflowViewState.IdRef="If_57">
                                                     <sap:WorkflowViewStateService.ViewState>
                                                       <scg:Dictionary x:TypeArguments="x:String, x:Object">
                                                         <x:Boolean x:Key="IsExpanded">True</x:Boolean>
