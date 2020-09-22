@@ -1913,15 +1913,15 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\saeid\\.nuget\\packages\\": {}
+    "C:\\Users\\bot1\\.nuget\\packages\\": {}
   },
   "project": {
     "restore": {
       "projectUniqueName": "webinarDownloader",
       "projectName": "webinarDownloader",
-      "projectPath": "C:\\Users\\saeid\\Documents\\webinarDownloader\\.local",
-      "packagesPath": "C:\\Users\\saeid\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\saeid\\Documents\\webinarDownloader\\.local"
+      "projectPath": "C:\\Users\\bot1\\Desktop\\New folder\\webinarDownloader\\.local",
+      "packagesPath": "C:\\Users\\bot1\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\bot1\\Desktop\\New folder\\webinarDownloader\\.local"
     },
     "frameworks": {
       "net461": {

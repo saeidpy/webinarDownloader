@@ -10,10 +10,9 @@
     "UiPath.WebAPI.Activities": "[1.4.5]"
   },
   "webServices": [],
-  "entitiesStores": [],
   "schemaVersion": "4.0",
   "studioVersion": "20.4.0.0",
-  "projectVersion": "1.0.83",
+  "projectVersion": "1.0.84",
   "runtimeOptions": {
     "autoDispose": false,
     "isPausable": true,
@@ -38,6 +37,5 @@
     "input": [],
     "output": []
   },
-  "expressionLanguage": "VisualBasic",
-  "isTemplate": false
+  "expressionLanguage": "VisualBasic"
 }
