@@ -13,7 +13,7 @@
   "entitiesStores": [],
   "schemaVersion": "4.0",
   "studioVersion": "20.4.0.0",
-  "projectVersion": "1.0.85",
+  "projectVersion": "1.0.92",
   "runtimeOptions": {
     "autoDispose": false,
     "isPausable": true,
@@ -23,7 +23,9 @@
       "Private:*",
       "*password*"
     ],
-    "executionType": "Workflow"
+    "executionType": "Workflow",
+    "readyForPiP": false,
+    "startsInPiP": false
   },
   "designOptions": {
     "projectProfile": "Developement",
@@ -32,12 +34,22 @@
       "includeOriginalXaml": false,
       "privateWorkflows": []
     },
-    "fileInfoCollection": []
-  },
-  "arguments": {
-    "input": [],
-    "output": []
+    "processOptions": {
+      "ignoredFiles": []
+    },
+    "fileInfoCollection": [],
+    "modernBehavior": false
   },
   "expressionLanguage": "VisualBasic",
-  "isTemplate": false
+  "entryPoints": [
+    {
+      "filePath": "Main.xaml",
+      "uniqueId": "a24f4490-5117-449c-850c-3ce001f75eda",
+      "input": [],
+      "output": []
+    }
+  ],
+  "isTemplate": false,
+  "templateProjectData": {},
+  "publishData": {}
 }

@@ -1,6 +1,6 @@
-<Activity mc:Ignorable="sap sap2010" x:Class="Main" mva:VisualBasic.Settings="{x:Null}" sap:VirtualizedContainerService.HintSize="1794,1040" sap2010:WorkflowViewState.IdRef="ActivityBuilder_1" xmlns="http://schemas.microsoft.com/netfx/2009/xaml/activities" xmlns:av="http://schemas.microsoft.com/winfx/2006/xaml/presentation" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:mva="clr-namespace:Microsoft.VisualBasic.Activities;assembly=System.Activities" xmlns:s="clr-namespace:System;assembly=mscorlib" xmlns:sap="http://schemas.microsoft.com/netfx/2009/xaml/activities/presentation" xmlns:sap2010="http://schemas.microsoft.com/netfx/2010/xaml/activities/presentation" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=mscorlib" xmlns:sd="clr-namespace:System.Data;assembly=System.Data" xmlns:ui="http://schemas.uipath.com/workflow/activities" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+<Activity mc:Ignorable="sap sap2010" x:Class="Main" mva:VisualBasic.Settings="{x:Null}" sap:VirtualizedContainerService.HintSize="1263,1000" sap2010:WorkflowViewState.IdRef="ActivityBuilder_1" xmlns="http://schemas.microsoft.com/netfx/2009/xaml/activities" xmlns:av="http://schemas.microsoft.com/winfx/2006/xaml/presentation" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:mva="clr-namespace:Microsoft.VisualBasic.Activities;assembly=System.Activities" xmlns:s="clr-namespace:System;assembly=mscorlib" xmlns:sap="http://schemas.microsoft.com/netfx/2009/xaml/activities/presentation" xmlns:sap2010="http://schemas.microsoft.com/netfx/2010/xaml/activities/presentation" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=mscorlib" xmlns:sd="clr-namespace:System.Data;assembly=System.Data" xmlns:ui="http://schemas.uipath.com/workflow/activities" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
   <TextExpression.NamespacesForImplementation>
-    <scg:List x:TypeArguments="x:String" Capacity="31">
+    <scg:List x:TypeArguments="x:String" Capacity="62">
       <x:String>System.Activities</x:String>
       <x:String>System.Activities.Statements</x:String>
       <x:String>System.Activities.Expressions</x:String>
@@ -32,6 +32,8 @@
       <x:String>UiPath.Platform.ObjectLibrary</x:String>
       <x:String>System.ComponentModel</x:String>
       <x:String>System.Runtime.Serialization</x:String>
+      <x:String>System.Reflection</x:String>
+      <x:String>System.Runtime.InteropServices</x:String>
     </scg:List>
   </TextExpression.NamespacesForImplementation>
   <TextExpression.ReferencesForImplementation>
@@ -76,7 +78,7 @@
       <Variable x:TypeArguments="x:Int32" Name="mainSwitch" />
       <Variable x:TypeArguments="x:String" Name="roboType">
         <Variable.Default>
-          <Literal x:TypeArguments="x:String">bot</Literal>
+          <Literal x:TypeArguments="x:String">spa</Literal>
         </Variable.Default>
       </Variable>
       <Variable x:TypeArguments="x:String" Default="[&quot;C:\Users\&quot;+roboType+&quot;\RobotSetting\&quot;]" Name="settingPath" />
@@ -2625,7 +2627,7 @@
             <av:PointCollection x:Key="ConnectorLocation">910,532 910,636.5</av:PointCollection>
           </scg:Dictionary>
         </sap:WorkflowViewStateService.ViewState>
-        <Sequence DisplayName="Video Recorder" sap:VirtualizedContainerService.HintSize="1434,13935" sap2010:WorkflowViewState.IdRef="Sequence_166">
+        <Sequence DisplayName="Video Recorder" sap:VirtualizedContainerService.HintSize="1434,14303" sap2010:WorkflowViewState.IdRef="Sequence_166">
           <Sequence.Variables>
             <Variable x:TypeArguments="sd:DataTable" Name="recordingTable" />
             <Variable x:TypeArguments="x:Boolean" Name="existWebinarDone" />
@@ -2640,13 +2642,13 @@
               <x:Boolean x:Key="IsExpanded">True</x:Boolean>
             </scg:Dictionary>
           </sap:WorkflowViewStateService.ViewState>
-          <ui:ForEach x:TypeArguments="x:Object" CurrentIndex="{x:Null}" DisplayName="For Each" sap:VirtualizedContainerService.HintSize="1392,13022" sap2010:WorkflowViewState.IdRef="ForEach`1_6" Values="[newLinks]">
+          <ui:ForEach x:TypeArguments="x:Object" CurrentIndex="{x:Null}" DisplayName="For Each" sap:VirtualizedContainerService.HintSize="1392,13390" sap2010:WorkflowViewState.IdRef="ForEach`1_6" Values="[newLinks]">
             <ui:ForEach.Body>
               <ActivityAction x:TypeArguments="x:Object">
                 <ActivityAction.Argument>
                   <DelegateInArgument x:TypeArguments="x:Object" Name="item" />
                 </ActivityAction.Argument>
-                <Sequence sap:VirtualizedContainerService.HintSize="1356,12888" sap2010:WorkflowViewState.IdRef="Sequence_198">
+                <Sequence sap:VirtualizedContainerService.HintSize="1356,13256" sap2010:WorkflowViewState.IdRef="Sequence_198">
                   <Sequence.Variables>
                     <Variable x:TypeArguments="x:Boolean" Name="exeption" />
                     <Variable x:TypeArguments="x:String" Name="scoID" />
@@ -2695,7 +2697,7 @@
                     </ui:CloseApplication.Target>
                   </ui:CloseApplication>
                   <Delay Duration="00:00:04" sap:VirtualizedContainerService.HintSize="1314,22" sap2010:WorkflowViewState.IdRef="Delay_7" />
-                  <TryCatch DisplayName="Try Catch" sap:VirtualizedContainerService.HintSize="1314,12351" sap2010:WorkflowViewState.IdRef="TryCatch_13">
+                  <TryCatch DisplayName="Try Catch" sap:VirtualizedContainerService.HintSize="1314,12719" sap2010:WorkflowViewState.IdRef="TryCatch_13">
                     <sap:WorkflowViewStateService.ViewState>
                       <scg:Dictionary x:TypeArguments="x:String, x:Object">
                         <x:Boolean x:Key="IsExpanded">True</x:Boolean>
@@ -2703,7 +2705,7 @@
                       </scg:Dictionary>
                     </sap:WorkflowViewStateService.ViewState>
                     <TryCatch.Try>
-                      <Sequence sap:VirtualizedContainerService.HintSize="1276,12124" sap2010:WorkflowViewState.IdRef="Sequence_197">
+                      <Sequence sap:VirtualizedContainerService.HintSize="1276,12492" sap2010:WorkflowViewState.IdRef="Sequence_197">
                         <Sequence.Variables>
                           <Variable x:TypeArguments="x:String" Name="urlWebirnarManual" />
                           <Variable x:TypeArguments="x:Boolean" Name="emptyDataTableManual" />
@@ -2733,7 +2735,7 @@
                         </Assign>
                         <ui:CommentOut DisplayName="Comment Out" sap:VirtualizedContainerService.HintSize="1234,51" sap2010:WorkflowViewState.IdRef="CommentOut_48">
                           <ui:CommentOut.Body>
-                            <Sequence DisplayName="Ignored Activities" sap:VirtualizedContainerService.HintSize="242,143" sap2010:WorkflowViewState.IdRef="Sequence_233">
+                            <Sequence DisplayName="Ignored Activities" sap:VirtualizedContainerService.HintSize="679,143" sap2010:WorkflowViewState.IdRef="Sequence_233">
                               <sap:WorkflowViewStateService.ViewState>
                                 <scg:Dictionary x:TypeArguments="x:String, x:Object">
                                   <x:Boolean x:Key="IsExpanded">True</x:Boolean>
@@ -2861,13 +2863,13 @@
                             </scg:Dictionary>
                           </sap:WorkflowViewStateService.ViewState>
                         </ui:CommentOut>
-                        <ui:OpenBrowser CommunicationMethod="{x:Null}" Hidden="{x:Null}" NewSession="{x:Null}" Private="{x:Null}" BrowserType="Chrome" DisplayName="Open Browser" sap:VirtualizedContainerService.HintSize="1234,1523" sap2010:WorkflowViewState.IdRef="OpenBrowser_8" UiBrowser="[mainBrowser]" Url="[item.ToString]">
+                        <ui:OpenBrowser CommunicationMethod="{x:Null}" Hidden="{x:Null}" NewSession="{x:Null}" Private="{x:Null}" BrowserType="Chrome" DisplayName="Open Browser" sap:VirtualizedContainerService.HintSize="1234,1891" sap2010:WorkflowViewState.IdRef="OpenBrowser_8" UiBrowser="[mainBrowser]" Url="[item.ToString]">
                           <ui:OpenBrowser.Body>
                             <ActivityAction x:TypeArguments="x:Object">
                               <ActivityAction.Argument>
                                 <DelegateInArgument x:TypeArguments="x:Object" Name="ContextTarget" />
                               </ActivityAction.Argument>
-                              <Sequence DisplayName="Do" sap:VirtualizedContainerService.HintSize="604,1422" sap2010:WorkflowViewState.IdRef="Sequence_239">
+                              <Sequence DisplayName="Do" sap:VirtualizedContainerService.HintSize="605,1790" sap2010:WorkflowViewState.IdRef="Sequence_239">
                                 <Sequence.Variables>
                                   <Variable x:TypeArguments="x:Boolean" Name="loadMainPage" />
                                 </Sequence.Variables>
@@ -2876,124 +2878,53 @@
                                     <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                                   </scg:Dictionary>
                                 </sap:WorkflowViewStateService.ViewState>
-                                <ui:InterruptibleDoWhile DisplayName="Do While" sap:VirtualizedContainerService.HintSize="562,756" sap2010:WorkflowViewState.IdRef="InterruptibleDoWhile_16">
-                                  <ui:InterruptibleDoWhile.Body>
-                                    <Sequence DisplayName="Body" sap:VirtualizedContainerService.HintSize="526,591" sap2010:WorkflowViewState.IdRef="Sequence_234">
-                                      <Sequence.Variables>
-                                        <Variable x:TypeArguments="x:Boolean" Name="finishLoad" />
-                                      </Sequence.Variables>
-                                      <sap:WorkflowViewStateService.ViewState>
-                                        <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                                          <x:Boolean x:Key="IsExpanded">True</x:Boolean>
-                                        </scg:Dictionary>
-                                      </sap:WorkflowViewStateService.ViewState>
-                                      <ui:UiElementExists DisplayName="Check Exist Login Page" Exists="[loadMainPage]" sap:VirtualizedContainerService.HintSize="484,106" sap2010:WorkflowViewState.IdRef="UiElementExists_4">
-                                        <ui:UiElementExists.Target>
-                                          <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="934f8ad7-1848-41f1-b00f-53c63a052511" InformativeScreenshot="e8c68984f618cdb723a26c4ab301bc04" Selector="&lt;html app='chrome.exe' title='My Home Page' /&gt;&lt;webctrl parentid='coral-id-0' tag='CORAL-TAB-LABEL' /&gt;" TimeoutMS="5000" WaitForReady="COMPLETE" />
-                                        </ui:UiElementExists.Target>
-                                      </ui:UiElementExists>
-                                      <ui:UiElementExists DisplayName="Check Exist Login Page" Exists="[finishLoad]" sap:VirtualizedContainerService.HintSize="484,106" sap2010:WorkflowViewState.IdRef="UiElementExists_5">
-                                        <ui:UiElementExists.Target>
-                                          <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="934f8ad7-1848-41f1-b00f-53c63a052511" InformativeScreenshot="4b7520c783490df2f766c9c4ee13390e" Selector="&lt;html app='chrome.exe' title='Recordings' /&gt;&lt;webctrl id='sl-a2::21003' tag='A' /&gt;" TimeoutMS="5000" WaitForReady="COMPLETE" />
-                                        </ui:UiElementExists.Target>
-                                      </ui:UiElementExists>
-                                      <If Condition="[finishLoad]" sap:VirtualizedContainerService.HintSize="484,207" sap2010:WorkflowViewState.IdRef="If_77">
-                                        <If.Then>
-                                          <Assign sap:VirtualizedContainerService.HintSize="262,60" sap2010:WorkflowViewState.IdRef="Assign_150">
-                                            <Assign.To>
-                                              <OutArgument x:TypeArguments="x:Boolean">[loadMainPage]</OutArgument>
-                                            </Assign.To>
-                                            <Assign.Value>
-                                              <InArgument x:TypeArguments="x:Boolean">True</InArgument>
-                                            </Assign.Value>
-                                          </Assign>
-                                        </If.Then>
-                                      </If>
-                                    </Sequence>
-                                  </ui:InterruptibleDoWhile.Body>
-                                  <ui:InterruptibleDoWhile.Condition>
-                                    <mva:VisualBasicValue x:TypeArguments="x:Boolean" ExpressionText="loadMainPage = False" sap2010:WorkflowViewState.IdRef="VisualBasicValue`1_1" />
-                                  </ui:InterruptibleDoWhile.Condition>
-                                </ui:InterruptibleDoWhile>
-                                <ui:NavigateTo Browser="{x:Null}" DisplayName="Navigate To" sap:VirtualizedContainerService.HintSize="562,59" sap2010:WorkflowViewState.IdRef="NavigateTo_1" Url="[item.ToString]" />
-                                <ui:CommentOut DisplayName="Comment Out" sap:VirtualizedContainerService.HintSize="562,51" sap2010:WorkflowViewState.IdRef="CommentOut_49">
+                                <ui:CommentOut DisplayName="Comment Out" sap:VirtualizedContainerService.HintSize="563,51" sap2010:WorkflowViewState.IdRef="CommentOut_50">
                                   <ui:CommentOut.Body>
-                                    <Sequence DisplayName="Ignored Activities" sap:VirtualizedContainerService.HintSize="605,1023" sap2010:WorkflowViewState.IdRef="Sequence_237">
+                                    <Sequence DisplayName="Ignored Activities" sap:VirtualizedContainerService.HintSize="604,848" sap2010:WorkflowViewState.IdRef="Sequence_241">
                                       <sap:WorkflowViewStateService.ViewState>
                                         <scg:Dictionary x:TypeArguments="x:String, x:Object">
                                           <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                                         </scg:Dictionary>
                                       </sap:WorkflowViewStateService.ViewState>
-                                      <Sequence DisplayName="Login Sequence" sap:VirtualizedContainerService.HintSize="563,931" sap2010:WorkflowViewState.IdRef="Sequence_236">
-                                        <Sequence.Variables>
-                                          <Variable x:TypeArguments="x:Boolean" Name="existLoginPage" />
-                                        </Sequence.Variables>
-                                        <sap:WorkflowViewStateService.ViewState>
-                                          <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                                            <x:Boolean x:Key="IsExpanded">True</x:Boolean>
-                                            <x:Boolean x:Key="IsPinned">False</x:Boolean>
-                                          </scg:Dictionary>
-                                        </sap:WorkflowViewStateService.ViewState>
-                                        <ui:UiElementExists DisplayName="Check Exist Login Page" Exists="[existLoginPage]" sap:VirtualizedContainerService.HintSize="521,106" sap2010:WorkflowViewState.IdRef="UiElementExists_6">
-                                          <ui:UiElementExists.Target>
-                                            <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="934f8ad7-1848-41f1-b00f-53c63a052511" InformativeScreenshot="916395a037536480d7844f8a2830022d" Selector="&lt;html app='chrome.exe' title='Adobe Connect Central Login' /&gt;&lt;webctrl id='login-button' tag='INPUT' /&gt;" TimeoutMS="5000" WaitForReady="COMPLETE" />
-                                          </ui:UiElementExists.Target>
-                                        </ui:UiElementExists>
-                                        <If Condition="[existLoginPage]" DisplayName="If Exist Login Page" sap:VirtualizedContainerService.HintSize="521,693" sap2010:WorkflowViewState.IdRef="If_78">
-                                          <sap:WorkflowViewStateService.ViewState>
-                                            <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                                              <x:Boolean x:Key="IsExpanded">True</x:Boolean>
-                                              <x:Boolean x:Key="IsPinned">False</x:Boolean>
-                                            </scg:Dictionary>
-                                          </sap:WorkflowViewStateService.ViewState>
-                                          <If.Then>
-                                            <Sequence sap:VirtualizedContainerService.HintSize="376,546" sap2010:WorkflowViewState.IdRef="Sequence_235">
-                                              <sap:WorkflowViewStateService.ViewState>
-                                                <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                                                  <x:Boolean x:Key="IsExpanded">True</x:Boolean>
-                                                </scg:Dictionary>
-                                              </sap:WorkflowViewStateService.ViewState>
-                                              <ui:SetValue AlterIfDisabled="{x:Null}" ContinueOnError="{x:Null}" DelayAfter="{x:Null}" DelayBefore="500" DisplayName="Username" sap:VirtualizedContainerService.HintSize="334,134" sap2010:WorkflowViewState.IdRef="SetValue_7" Text="[username]">
-                                                <ui:SetValue.Target>
-                                                  <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="d9c925a5-602b-4b95-a4c6-351dee35ad41" InformativeScreenshot="7554872f9f161f894e0756fff70a040a" Selector="&lt;webctrl id='name' tag='INPUT' /&gt;" WaitForReady="COMPLETE">
-                                                    <ui:Target.TimeoutMS>
-                                                      <InArgument x:TypeArguments="x:Int32" />
-                                                    </ui:Target.TimeoutMS>
-                                                  </ui:Target>
-                                                </ui:SetValue.Target>
-                                              </ui:SetValue>
-                                              <ui:SetValue AlterIfDisabled="{x:Null}" ContinueOnError="{x:Null}" DelayAfter="{x:Null}" DelayBefore="{x:Null}" DisplayName="Password" sap:VirtualizedContainerService.HintSize="334,134" sap2010:WorkflowViewState.IdRef="SetValue_8" Text="[password]">
-                                                <ui:SetValue.Target>
-                                                  <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="d9c925a5-602b-4b95-a4c6-351dee35ad41" InformativeScreenshot="d22bc062d85328d6757fd4091a077ff0" Selector="&lt;webctrl id='pwd' tag='INPUT' /&gt;" WaitForReady="COMPLETE">
-                                                    <ui:Target.TimeoutMS>
-                                                      <InArgument x:TypeArguments="x:Int32" />
-                                                    </ui:Target.TimeoutMS>
-                                                  </ui:Target>
-                                                </ui:SetValue.Target>
-                                              </ui:SetValue>
-                                              <ui:Click AlterIfDisabled="{x:Null}" DelayBefore="{x:Null}" DelayMS="{x:Null}" SendWindowMessages="{x:Null}" ClickType="CLICK_SINGLE" DisplayName="Click Login Button" sap:VirtualizedContainerService.HintSize="334,106" sap2010:WorkflowViewState.IdRef="Click_57" KeyModifiers="None" MouseButton="BTN_LEFT" SimulateClick="True">
-                                                <ui:Click.CursorPosition>
-                                                  <ui:CursorPosition Position="Center">
-                                                    <ui:CursorPosition.OffsetX>
-                                                      <InArgument x:TypeArguments="x:Int32" />
-                                                    </ui:CursorPosition.OffsetX>
-                                                    <ui:CursorPosition.OffsetY>
-                                                      <InArgument x:TypeArguments="x:Int32" />
-                                                    </ui:CursorPosition.OffsetY>
-                                                  </ui:CursorPosition>
-                                                </ui:Click.CursorPosition>
-                                                <ui:Click.Target>
-                                                  <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="b7aae300-13c0-4230-8172-956f65584311" InformativeScreenshot="916395a037536480d7844f8a2830022d" Selector="&lt;html app='chrome.exe' title='Adobe Connect Central Login' /&gt;&lt;webctrl id='login-button' tag='INPUT' /&gt;" WaitForReady="NONE">
-                                                    <ui:Target.TimeoutMS>
-                                                      <InArgument x:TypeArguments="x:Int32" />
-                                                    </ui:Target.TimeoutMS>
-                                                  </ui:Target>
-                                                </ui:Click.Target>
-                                              </ui:Click>
-                                            </Sequence>
-                                          </If.Then>
-                                        </If>
-                                      </Sequence>
+                                      <ui:InterruptibleDoWhile DisplayName="Do While" sap:VirtualizedContainerService.HintSize="562,756" sap2010:WorkflowViewState.IdRef="InterruptibleDoWhile_16">
+                                        <ui:InterruptibleDoWhile.Body>
+                                          <Sequence DisplayName="Body" sap:VirtualizedContainerService.HintSize="526,591" sap2010:WorkflowViewState.IdRef="Sequence_234">
+                                            <Sequence.Variables>
+                                              <Variable x:TypeArguments="x:Boolean" Name="finishLoad" />
+                                            </Sequence.Variables>
+                                            <sap:WorkflowViewStateService.ViewState>
+                                              <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                                <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                                              </scg:Dictionary>
+                                            </sap:WorkflowViewStateService.ViewState>
+                                            <ui:UiElementExists DisplayName="Check Exist Login Page" Exists="[loadMainPage]" sap:VirtualizedContainerService.HintSize="484,106" sap2010:WorkflowViewState.IdRef="UiElementExists_4">
+                                              <ui:UiElementExists.Target>
+                                                <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="934f8ad7-1848-41f1-b00f-53c63a052511" InformativeScreenshot="e8c68984f618cdb723a26c4ab301bc04" Selector="&lt;html app='chrome.exe' title='My Home Page' /&gt;&lt;webctrl parentid='coral-id-0' tag='CORAL-TAB-LABEL' /&gt;" TimeoutMS="5000" WaitForReady="COMPLETE" />
+                                              </ui:UiElementExists.Target>
+                                            </ui:UiElementExists>
+                                            <ui:UiElementExists DisplayName="Check Exist Login Page" Exists="[finishLoad]" sap:VirtualizedContainerService.HintSize="484,106" sap2010:WorkflowViewState.IdRef="UiElementExists_5">
+                                              <ui:UiElementExists.Target>
+                                                <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="934f8ad7-1848-41f1-b00f-53c63a052511" InformativeScreenshot="4b7520c783490df2f766c9c4ee13390e" Selector="&lt;html app='chrome.exe' title='Recordings' /&gt;&lt;webctrl id='sl-a2::21003' tag='A' /&gt;" TimeoutMS="5000" WaitForReady="COMPLETE" />
+                                              </ui:UiElementExists.Target>
+                                            </ui:UiElementExists>
+                                            <If Condition="[finishLoad]" sap:VirtualizedContainerService.HintSize="484,207" sap2010:WorkflowViewState.IdRef="If_77">
+                                              <If.Then>
+                                                <Assign sap:VirtualizedContainerService.HintSize="262,60" sap2010:WorkflowViewState.IdRef="Assign_150">
+                                                  <Assign.To>
+                                                    <OutArgument x:TypeArguments="x:Boolean">[loadMainPage]</OutArgument>
+                                                  </Assign.To>
+                                                  <Assign.Value>
+                                                    <InArgument x:TypeArguments="x:Boolean">True</InArgument>
+                                                  </Assign.Value>
+                                                </Assign>
+                                              </If.Then>
+                                            </If>
+                                          </Sequence>
+                                        </ui:InterruptibleDoWhile.Body>
+                                        <ui:InterruptibleDoWhile.Condition>
+                                          <mva:VisualBasicValue x:TypeArguments="x:Boolean" ExpressionText="loadMainPage = False" sap2010:WorkflowViewState.IdRef="VisualBasicValue`1_1" />
+                                        </ui:InterruptibleDoWhile.Condition>
+                                      </ui:InterruptibleDoWhile>
                                     </Sequence>
                                   </ui:CommentOut.Body>
                                   <sap:WorkflowViewStateService.ViewState>
@@ -3003,7 +2934,107 @@
                                     </scg:Dictionary>
                                   </sap:WorkflowViewStateService.ViewState>
                                 </ui:CommentOut>
-                                <ui:BrowserScope Browser="{x:Null}" SearchScope="{x:Null}" UiBrowser="{x:Null}" BrowserType="Chrome" DisplayName="Attach Browser 'Recordings Page'" sap:VirtualizedContainerService.HintSize="562,344" sap2010:WorkflowViewState.IdRef="BrowserScope_19" InformativeScreenshot="844daeccd3b426a83ce1d206e78ff8b4" Selector="&lt;html app='chrome.exe'/&gt;" TimeoutMS="1000">
+                                <ui:WaitImageVanish ContinueOnError="True" DisplayName="Wait Image Vanish 'chrome.exe Recordings'" sap:VirtualizedContainerService.HintSize="563,106" sap2010:WorkflowViewState.IdRef="WaitImageVanish_1">
+                                  <ui:WaitImageVanish.Image>
+                                    <ui:ImageTarget Image="{x:Null}" Accuracy="0.8" Profile="Basic" TargetImageBase64="iVBORw0KGgoAAAANSUhEUgAAABUAAAAXCAYAAADk3wSdAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAC6SURBVEhL5ZMxDsMgDEV7/4OwcAUWDsDCxM7EwsTE4upHOCpJSUMgS/okliC9fGP7RTfwEGmMkZxzpJQiIQR578vNMU0pZBB9niGp1noVGWMWWc653P5mJ7XWLjIpJYUQytc+KmlKaU14VQgqKUrlkkeopNzlkZSgknLpPU35xv3S3iFvUUl54Kc2CmvJTzBtpACnnTb8zHZNIR9aUwbrirQs53MmfVMKsLZIiqnAD84+yaH0Kn8tJXoDqvZUh+ns5doAAAAASUVORK5CYII=" />
+                                  </ui:WaitImageVanish.Image>
+                                  <ui:WaitImageVanish.Target>
+                                    <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="645d2a4e-d872-45b0-ad54-33e10eb7b21f" Selector="&lt;wnd app='chrome.exe' cls='Chrome_WidgetWin_1' title='Recordings - Google Chrome' /&gt;">
+                                      <ui:Target.TimeoutMS>
+                                        <InArgument x:TypeArguments="x:Int32" />
+                                      </ui:Target.TimeoutMS>
+                                      <ui:Target.WaitForReady>
+                                        <InArgument x:TypeArguments="ui:WaitForReady" />
+                                      </ui:Target.WaitForReady>
+                                    </ui:Target>
+                                  </ui:WaitImageVanish.Target>
+                                </ui:WaitImageVanish>
+                                <Sequence DisplayName="Login Sequence" sap:VirtualizedContainerService.HintSize="563,931" sap2010:WorkflowViewState.IdRef="Sequence_236">
+                                  <Sequence.Variables>
+                                    <Variable x:TypeArguments="x:Boolean" Name="existLoginPage" />
+                                  </Sequence.Variables>
+                                  <sap:WorkflowViewStateService.ViewState>
+                                    <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                      <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                                      <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                                    </scg:Dictionary>
+                                  </sap:WorkflowViewStateService.ViewState>
+                                  <ui:UiElementExists DisplayName="Check Exist Login Page" Exists="[existLoginPage]" sap:VirtualizedContainerService.HintSize="521,106" sap2010:WorkflowViewState.IdRef="UiElementExists_6">
+                                    <ui:UiElementExists.Target>
+                                      <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="934f8ad7-1848-41f1-b00f-53c63a052511" InformativeScreenshot="916395a037536480d7844f8a2830022d" Selector="&lt;html app='chrome.exe' title='Adobe Connect Central Login' /&gt;&lt;webctrl id='login-button' tag='INPUT' /&gt;" TimeoutMS="25000" WaitForReady="COMPLETE" />
+                                    </ui:UiElementExists.Target>
+                                  </ui:UiElementExists>
+                                  <If Condition="[existLoginPage]" DisplayName="If Exist Login Page" sap:VirtualizedContainerService.HintSize="521,693" sap2010:WorkflowViewState.IdRef="If_78">
+                                    <sap:WorkflowViewStateService.ViewState>
+                                      <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                        <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                                        <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                                      </scg:Dictionary>
+                                    </sap:WorkflowViewStateService.ViewState>
+                                    <If.Then>
+                                      <Sequence sap:VirtualizedContainerService.HintSize="376,546" sap2010:WorkflowViewState.IdRef="Sequence_235">
+                                        <sap:WorkflowViewStateService.ViewState>
+                                          <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                            <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                                          </scg:Dictionary>
+                                        </sap:WorkflowViewStateService.ViewState>
+                                        <ui:SetValue AlterIfDisabled="{x:Null}" DelayAfter="{x:Null}" ContinueOnError="True" DelayBefore="500" DisplayName="Username" sap:VirtualizedContainerService.HintSize="334,134" sap2010:WorkflowViewState.IdRef="SetValue_7" Text="[username]">
+                                          <ui:SetValue.Target>
+                                            <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="d9c925a5-602b-4b95-a4c6-351dee35ad41" InformativeScreenshot="7554872f9f161f894e0756fff70a040a" Selector="&lt;webctrl id='name' tag='INPUT' /&gt;" WaitForReady="COMPLETE">
+                                              <ui:Target.TimeoutMS>
+                                                <InArgument x:TypeArguments="x:Int32" />
+                                              </ui:Target.TimeoutMS>
+                                            </ui:Target>
+                                          </ui:SetValue.Target>
+                                        </ui:SetValue>
+                                        <ui:SetValue AlterIfDisabled="{x:Null}" DelayAfter="{x:Null}" DelayBefore="{x:Null}" ContinueOnError="True" DisplayName="Password" sap:VirtualizedContainerService.HintSize="334,134" sap2010:WorkflowViewState.IdRef="SetValue_8" Text="[password]">
+                                          <ui:SetValue.Target>
+                                            <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="d9c925a5-602b-4b95-a4c6-351dee35ad41" InformativeScreenshot="d22bc062d85328d6757fd4091a077ff0" Selector="&lt;webctrl id='pwd' tag='INPUT' /&gt;" WaitForReady="COMPLETE">
+                                              <ui:Target.TimeoutMS>
+                                                <InArgument x:TypeArguments="x:Int32" />
+                                              </ui:Target.TimeoutMS>
+                                            </ui:Target>
+                                          </ui:SetValue.Target>
+                                        </ui:SetValue>
+                                        <ui:Click AlterIfDisabled="{x:Null}" DelayBefore="{x:Null}" DelayMS="{x:Null}" SendWindowMessages="{x:Null}" ClickType="CLICK_SINGLE" ContinueOnError="True" DisplayName="Click Login Button" sap:VirtualizedContainerService.HintSize="334,106" sap2010:WorkflowViewState.IdRef="Click_57" KeyModifiers="None" MouseButton="BTN_LEFT" SimulateClick="True">
+                                          <ui:Click.CursorPosition>
+                                            <ui:CursorPosition Position="Center">
+                                              <ui:CursorPosition.OffsetX>
+                                                <InArgument x:TypeArguments="x:Int32" />
+                                              </ui:CursorPosition.OffsetX>
+                                              <ui:CursorPosition.OffsetY>
+                                                <InArgument x:TypeArguments="x:Int32" />
+                                              </ui:CursorPosition.OffsetY>
+                                            </ui:CursorPosition>
+                                          </ui:Click.CursorPosition>
+                                          <ui:Click.Target>
+                                            <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="b7aae300-13c0-4230-8172-956f65584311" InformativeScreenshot="916395a037536480d7844f8a2830022d" Selector="&lt;html app='chrome.exe' title='Adobe Connect Central Login' /&gt;&lt;webctrl id='login-button' tag='INPUT' /&gt;" WaitForReady="NONE">
+                                              <ui:Target.TimeoutMS>
+                                                <InArgument x:TypeArguments="x:Int32" />
+                                              </ui:Target.TimeoutMS>
+                                            </ui:Target>
+                                          </ui:Click.Target>
+                                        </ui:Click>
+                                      </Sequence>
+                                    </If.Then>
+                                  </If>
+                                </Sequence>
+                                <ui:WaitImageVanish ContinueOnError="True" DisplayName="Wait Image Vanish 'chrome.exe Recordings'" sap:VirtualizedContainerService.HintSize="563,106" sap2010:WorkflowViewState.IdRef="WaitImageVanish_2">
+                                  <ui:WaitImageVanish.Image>
+                                    <ui:ImageTarget Image="{x:Null}" Accuracy="0.8" Profile="Basic" TargetImageBase64="iVBORw0KGgoAAAANSUhEUgAAABUAAAAXCAYAAADk3wSdAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAC6SURBVEhL5ZMxDsMgDEV7/4OwcAUWDsDCxM7EwsTE4upHOCpJSUMgS/okliC9fGP7RTfwEGmMkZxzpJQiIQR578vNMU0pZBB9niGp1noVGWMWWc653P5mJ7XWLjIpJYUQytc+KmlKaU14VQgqKUrlkkeopNzlkZSgknLpPU35xv3S3iFvUUl54Kc2CmvJTzBtpACnnTb8zHZNIR9aUwbrirQs53MmfVMKsLZIiqnAD84+yaH0Kn8tJXoDqvZUh+ns5doAAAAASUVORK5CYII=" />
+                                  </ui:WaitImageVanish.Image>
+                                  <ui:WaitImageVanish.Target>
+                                    <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="645d2a4e-d872-45b0-ad54-33e10eb7b21f" Selector="&lt;wnd app='chrome.exe' cls='Chrome_WidgetWin_1' title='Recordings - Google Chrome' /&gt;">
+                                      <ui:Target.TimeoutMS>
+                                        <InArgument x:TypeArguments="x:Int32" />
+                                      </ui:Target.TimeoutMS>
+                                      <ui:Target.WaitForReady>
+                                        <InArgument x:TypeArguments="ui:WaitForReady" />
+                                      </ui:Target.WaitForReady>
+                                    </ui:Target>
+                                  </ui:WaitImageVanish.Target>
+                                </ui:WaitImageVanish>
+                                <ui:BrowserScope Browser="{x:Null}" SearchScope="{x:Null}" TimeoutMS="{x:Null}" UiBrowser="{x:Null}" BrowserType="Chrome" DisplayName="Attach Browser 'Recordings Page'" sap:VirtualizedContainerService.HintSize="563,344" sap2010:WorkflowViewState.IdRef="BrowserScope_19" InformativeScreenshot="844daeccd3b426a83ce1d206e78ff8b4" Selector="&lt;html app='chrome.exe'/&gt;">
                                   <ui:BrowserScope.Body>
                                     <ActivityAction x:TypeArguments="x:Object">
                                       <ActivityAction.Argument>
