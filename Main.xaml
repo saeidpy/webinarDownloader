@@ -81,7 +81,11 @@
       <Variable x:TypeArguments="x:Boolean" Default="False" Name="endBeEmptyData" />
       <Variable x:TypeArguments="x:String" Default="5FE5AF7164B9DD98D5D3182F44937CDE2B47" Name="mailPass" />
       <Variable x:TypeArguments="x:Int32" Name="mainSwitch" />
-      <Variable x:TypeArguments="x:String" Default="bot" Name="roboType" />
+      <Variable x:TypeArguments="x:String" Name="roboType">
+        <Variable.Default>
+          <Literal x:TypeArguments="x:String">spa</Literal>
+        </Variable.Default>
+      </Variable>
       <Variable x:TypeArguments="x:String" Default="[&quot;C:\Users\&quot;+roboType+&quot;\RobotSetting\&quot;]" Name="settingPath" />
       <Variable x:TypeArguments="x:String" Default="shahriyar.hosseinzadeh@gmail.com" Name="receiverEmail" />
       <Variable x:TypeArguments="x:String" Name="url" />
@@ -2628,7 +2632,7 @@
             <av:PointCollection x:Key="ConnectorLocation">910,532 910,636.5</av:PointCollection>
           </scg:Dictionary>
         </sap:WorkflowViewStateService.ViewState>
-        <Sequence DisplayName="Video Recorder" sap:VirtualizedContainerService.HintSize="1434,16849" sap2010:WorkflowViewState.IdRef="Sequence_166">
+        <Sequence DisplayName="Video Recorder" sap:VirtualizedContainerService.HintSize="1434,17496" sap2010:WorkflowViewState.IdRef="Sequence_166">
           <Sequence.Variables>
             <Variable x:TypeArguments="sd:DataTable" Name="recordingTable" />
             <Variable x:TypeArguments="x:Boolean" Name="existWebinarDone" />
@@ -2644,13 +2648,13 @@
               <x:Boolean x:Key="IsExpanded">True</x:Boolean>
             </scg:Dictionary>
           </sap:WorkflowViewStateService.ViewState>
-          <ui:ForEach x:TypeArguments="x:Object" CurrentIndex="{x:Null}" DisplayName="For Each" sap:VirtualizedContainerService.HintSize="1392,15567" sap2010:WorkflowViewState.IdRef="ForEach`1_6" Values="[newLinks]">
+          <ui:ForEach x:TypeArguments="x:Object" CurrentIndex="{x:Null}" DisplayName="For Each" sap:VirtualizedContainerService.HintSize="1392,16214" sap2010:WorkflowViewState.IdRef="ForEach`1_6" Values="[newLinks]">
             <ui:ForEach.Body>
               <ActivityAction x:TypeArguments="x:Object">
                 <ActivityAction.Argument>
                   <DelegateInArgument x:TypeArguments="x:Object" Name="item" />
                 </ActivityAction.Argument>
-                <Sequence sap:VirtualizedContainerService.HintSize="1356,15433" sap2010:WorkflowViewState.IdRef="Sequence_198">
+                <Sequence sap:VirtualizedContainerService.HintSize="1356,16080" sap2010:WorkflowViewState.IdRef="Sequence_198">
                   <Sequence.Variables>
                     <Variable x:TypeArguments="x:Boolean" Name="exeption" />
                     <Variable x:TypeArguments="x:String" Name="scoID" />
@@ -2699,7 +2703,7 @@
                     </ui:CloseApplication.Target>
                   </ui:CloseApplication>
                   <Delay Duration="00:00:05" sap:VirtualizedContainerService.HintSize="1314,22" sap2010:WorkflowViewState.IdRef="Delay_7" />
-                  <TryCatch DisplayName="Try Catch" sap:VirtualizedContainerService.HintSize="1314,14896" sap2010:WorkflowViewState.IdRef="TryCatch_13">
+                  <TryCatch DisplayName="Try Catch" sap:VirtualizedContainerService.HintSize="1314,15543" sap2010:WorkflowViewState.IdRef="TryCatch_13">
                     <sap:WorkflowViewStateService.ViewState>
                       <scg:Dictionary x:TypeArguments="x:String, x:Object">
                         <x:Boolean x:Key="IsExpanded">True</x:Boolean>
@@ -2707,7 +2711,7 @@
                       </scg:Dictionary>
                     </sap:WorkflowViewStateService.ViewState>
                     <TryCatch.Try>
-                      <Sequence sap:VirtualizedContainerService.HintSize="1276,14669" sap2010:WorkflowViewState.IdRef="Sequence_197">
+                      <Sequence sap:VirtualizedContainerService.HintSize="1276,15316" sap2010:WorkflowViewState.IdRef="Sequence_197">
                         <Sequence.Variables>
                           <Variable x:TypeArguments="x:String" Name="urlWebirnarManual" />
                           <Variable x:TypeArguments="x:Boolean" Name="emptyDataTableManual" />
@@ -2865,13 +2869,13 @@
                             </scg:Dictionary>
                           </sap:WorkflowViewStateService.ViewState>
                         </ui:CommentOut>
-                        <ui:OpenBrowser CommunicationMethod="{x:Null}" Hidden="{x:Null}" NewSession="{x:Null}" Private="{x:Null}" BrowserType="Chrome" DisplayName="Open Browser" sap:VirtualizedContainerService.HintSize="1234,2561" sap2010:WorkflowViewState.IdRef="OpenBrowser_8" UiBrowser="[mainBrowser]" Url="[item.ToString]">
+                        <ui:OpenBrowser CommunicationMethod="{x:Null}" Hidden="{x:Null}" NewSession="{x:Null}" Private="{x:Null}" BrowserType="Chrome" DisplayName="Open Browser" sap:VirtualizedContainerService.HintSize="1234,3208" sap2010:WorkflowViewState.IdRef="OpenBrowser_8" UiBrowser="[mainBrowser]" Url="[item.ToString]">
                           <ui:OpenBrowser.Body>
                             <ActivityAction x:TypeArguments="x:Object">
                               <ActivityAction.Argument>
                                 <DelegateInArgument x:TypeArguments="x:Object" Name="ContextTarget" />
                               </ActivityAction.Argument>
-                              <Sequence DisplayName="Do" sap:VirtualizedContainerService.HintSize="605,2460" sap2010:WorkflowViewState.IdRef="Sequence_239">
+                              <Sequence DisplayName="Do" sap:VirtualizedContainerService.HintSize="605,3107" sap2010:WorkflowViewState.IdRef="Sequence_239">
                                 <Sequence.Variables>
                                   <Variable x:TypeArguments="x:Boolean" Name="loadMainPage" />
                                 </Sequence.Variables>
@@ -3038,32 +3042,74 @@
                                   </ui:WaitImageVanish.Target>
                                 </ui:WaitImageVanish>
                                 <Delay Duration="00:00:05" sap:VirtualizedContainerService.HintSize="563,22" sap2010:WorkflowViewState.IdRef="Delay_9" />
-                                <ui:BrowserScope Browser="{x:Null}" SearchScope="{x:Null}" TimeoutMS="{x:Null}" UiBrowser="{x:Null}" BrowserType="Chrome" DisplayName="Attach Browser 'Recordings Page'" sap:VirtualizedContainerService.HintSize="563,608" sap2010:WorkflowViewState.IdRef="BrowserScope_19" InformativeScreenshot="844daeccd3b426a83ce1d206e78ff8b4" Selector="&lt;html app='chrome.exe'/&gt;">
+                                <ui:BrowserScope Browser="{x:Null}" SearchScope="{x:Null}" TimeoutMS="{x:Null}" UiBrowser="{x:Null}" BrowserType="Chrome" DisplayName="Attach Browser 'Recordings Page'" sap:VirtualizedContainerService.HintSize="563,1255" sap2010:WorkflowViewState.IdRef="BrowserScope_19" InformativeScreenshot="844daeccd3b426a83ce1d206e78ff8b4" Selector="&lt;html app='chrome.exe'/&gt;">
                                   <ui:BrowserScope.Body>
                                     <ActivityAction x:TypeArguments="x:Object">
                                       <ActivityAction.Argument>
                                         <DelegateInArgument x:TypeArguments="x:Object" Name="ContextTarget" />
                                       </ActivityAction.Argument>
-                                      <Sequence DisplayName="Do" sap:VirtualizedContainerService.HintSize="376,462" sap2010:WorkflowViewState.IdRef="Sequence_238">
+                                      <Sequence DisplayName="Do" sap:VirtualizedContainerService.HintSize="468,1109" sap2010:WorkflowViewState.IdRef="Sequence_238">
+                                        <Sequence.Variables>
+                                          <Variable x:TypeArguments="sd:DataTable" Name="recordingTableTest" />
+                                          <Variable x:TypeArguments="x:Int32" Name="count">
+                                            <Variable.Default>
+                                              <Literal x:TypeArguments="x:Int32" Value="1" />
+                                            </Variable.Default>
+                                          </Variable>
+                                        </Sequence.Variables>
                                         <sap:WorkflowViewStateService.ViewState>
                                           <scg:Dictionary x:TypeArguments="x:String, x:Object">
                                             <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                                           </scg:Dictionary>
                                         </sap:WorkflowViewStateService.ViewState>
-                                        <ui:SetWebAttribute DelayAfter="{x:Null}" Attribute="style" ContinueOnError="True" DelayBefore="1500" DisplayName="Set Web Attribute 'DIV  rl-div1_1::3590880'" sap:VirtualizedContainerService.HintSize="334,162" sap2010:WorkflowViewState.IdRef="SetWebAttribute_2" Value=" white-space: break-spaces !important;">
-                                          <ui:SetWebAttribute.Target>
-                                            <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="f4345ee0-81ed-4bfa-ae6e-880290722e93" InformativeScreenshot="6518450c4767d6d6976167321b2c4ece" Selector="&lt;html app='chrome.exe' title='Recordings' /&gt;&lt;webctrl tag='DIV' class='recording-link-text' /&gt;">
-                                              <ui:Target.TimeoutMS>
-                                                <InArgument x:TypeArguments="x:Int32" />
-                                              </ui:Target.TimeoutMS>
-                                              <ui:Target.WaitForReady>
-                                                <InArgument x:TypeArguments="ui:WaitForReady" />
-                                              </ui:Target.WaitForReady>
-                                            </ui:Target>
-                                          </ui:SetWebAttribute.Target>
-                                        </ui:SetWebAttribute>
-                                        <Delay Duration="00:00:05" sap:VirtualizedContainerService.HintSize="334,22" sap2010:WorkflowViewState.IdRef="Delay_10" />
-                                        <ui:ExtractData DelayBetweenPagesMS="{x:Null}" NextLinkSelector="{x:Null}" SimulateClick="{x:Null}" ContinueOnError="False" DataTable="[recordingTable]" DisplayName="Extract Structured Data 'TABLE'" ExtractMetadata="&lt;extract-table get_columns_name='1' get_empty_columns='1' columns_name_source='Longest' /&gt;" sap:VirtualizedContainerService.HintSize="334,106" sap2010:WorkflowViewState.IdRef="ExtractData_10" MaxNumberOfResults="1000" SendWindowMessages="True">
+                                        <Delay Duration="00:00:05" sap:VirtualizedContainerService.HintSize="426,22" sap2010:WorkflowViewState.IdRef="Delay_11" />
+                                        <ui:ExtractData DelayBetweenPagesMS="{x:Null}" NextLinkSelector="{x:Null}" SimulateClick="{x:Null}" ContinueOnError="False" DataTable="[recordingTableTest]" DisplayName="Extract Structured Data 'TABLE'" ExtractMetadata="&lt;extract-table get_columns_name='1' get_empty_columns='1' columns_name_source='Longest' /&gt;" sap:VirtualizedContainerService.HintSize="426,106" sap2010:WorkflowViewState.IdRef="ExtractData_11" MaxNumberOfResults="1000" SendWindowMessages="True">
+                                          <ui:ExtractData.Target>
+                                            <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="90989b3f-7ba0-446d-b9a7-4fbd4d631442" InformativeScreenshot="17b9123b43dbbc4face9bf9d55c2f8d2" Selector="&lt;webctrl idx='2' parentid='divBody' tag='TABLE' /&gt;" TimeoutMS="5000" WaitForReady="COMPLETE" />
+                                          </ui:ExtractData.Target>
+                                        </ui:ExtractData>
+                                        <ui:ForEachRow CurrentIndex="{x:Null}" DataTable="[recordingTableTest]" DisplayName="For Each Row" sap:VirtualizedContainerService.HintSize="426,601" sap2010:WorkflowViewState.IdRef="ForEachRow_6">
+                                          <ui:ForEachRow.Body>
+                                            <ActivityAction x:TypeArguments="sd:DataRow">
+                                              <ActivityAction.Argument>
+                                                <DelegateInArgument x:TypeArguments="sd:DataRow" Name="row" />
+                                              </ActivityAction.Argument>
+                                              <Sequence DisplayName="Body" sap:VirtualizedContainerService.HintSize="376,454" sap2010:WorkflowViewState.IdRef="Sequence_247">
+                                                <Sequence.Variables>
+                                                  <Variable x:TypeArguments="x:Int32" Name="countSet" />
+                                                </Sequence.Variables>
+                                                <sap:WorkflowViewStateService.ViewState>
+                                                  <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                                    <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                                                  </scg:Dictionary>
+                                                </sap:WorkflowViewStateService.ViewState>
+                                                <Assign sap:VirtualizedContainerService.HintSize="334,60" sap2010:WorkflowViewState.IdRef="Assign_158">
+                                                  <Assign.To>
+                                                    <OutArgument x:TypeArguments="x:Int32">[countSet]</OutArgument>
+                                                  </Assign.To>
+                                                  <Assign.Value>
+                                                    <InArgument x:TypeArguments="x:Int32">[count*2]</InArgument>
+                                                  </Assign.Value>
+                                                </Assign>
+                                                <ui:SetWebAttribute DelayAfter="{x:Null}" Attribute="style" ContinueOnError="True" DelayBefore="500" DisplayName="Set Web Attribute 'DIV  rl-div1_1::3590880'" sap:VirtualizedContainerService.HintSize="334,162" sap2010:WorkflowViewState.IdRef="SetWebAttribute_2" Value=" white-space: break-spaces !important;">
+                                                  <ui:SetWebAttribute.Target>
+                                                    <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="f4345ee0-81ed-4bfa-ae6e-880290722e93" InformativeScreenshot="6518450c4767d6d6976167321b2c4ece" Selector="&lt;html app='chrome.exe' title='Recordings' /&gt;&lt;webctrl tag='DIV' class='recording-link-text' tableRow='{{countSet}}' /&gt;" TimeoutMS="500" WaitForReady="COMPLETE" />
+                                                  </ui:SetWebAttribute.Target>
+                                                </ui:SetWebAttribute>
+                                                <Assign sap:VirtualizedContainerService.HintSize="334,60" sap2010:WorkflowViewState.IdRef="Assign_157">
+                                                  <Assign.To>
+                                                    <OutArgument x:TypeArguments="x:Int32">[count]</OutArgument>
+                                                  </Assign.To>
+                                                  <Assign.Value>
+                                                    <InArgument x:TypeArguments="x:Int32">[count+1]</InArgument>
+                                                  </Assign.Value>
+                                                </Assign>
+                                              </Sequence>
+                                            </ActivityAction>
+                                          </ui:ForEachRow.Body>
+                                        </ui:ForEachRow>
+                                        <Delay Duration="00:00:05" sap:VirtualizedContainerService.HintSize="426,22" sap2010:WorkflowViewState.IdRef="Delay_10" />
+                                        <ui:ExtractData DelayBetweenPagesMS="{x:Null}" NextLinkSelector="{x:Null}" SimulateClick="{x:Null}" ContinueOnError="False" DataTable="[recordingTable]" DisplayName="Extract Structured Data 'TABLE'" ExtractMetadata="&lt;extract-table get_columns_name='1' get_empty_columns='1' columns_name_source='Longest' /&gt;" sap:VirtualizedContainerService.HintSize="426,106" sap2010:WorkflowViewState.IdRef="ExtractData_10" MaxNumberOfResults="1000" SendWindowMessages="True">
                                           <ui:ExtractData.Target>
                                             <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="90989b3f-7ba0-446d-b9a7-4fbd4d631442" InformativeScreenshot="17b9123b43dbbc4face9bf9d55c2f8d2" Selector="&lt;webctrl idx='2' parentid='divBody' tag='TABLE' /&gt;" TimeoutMS="5000" WaitForReady="COMPLETE" />
                                           </ui:ExtractData.Target>
